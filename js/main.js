@@ -461,6 +461,72 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
+    /* STEP 1 — INTERACTIVE BEFORE / AFTER */
+    const enhanceBeforeAfter = (container) => {
+        if (!container || container.classList.contains("is-slider-enhanced")) return;
+        const figures = Array.from(container.children).filter(el => el.tagName === "FIGURE");
+        if (figures.length < 2) return;
+        const beforeImg = $("img", figures[0]);
+        const afterImg = $("img", figures[1]);
+        if (!beforeImg || !afterImg) return;
+
+        const slider = document.createElement("div");
+        slider.className = "ba-slider";
+        slider.tabIndex = 0;
+        slider.setAttribute("role","slider");
+        slider.setAttribute("aria-label","Before와 After 이미지 비교");
+        slider.setAttribute("aria-valuemin","0");
+        slider.setAttribute("aria-valuemax","100");
+        slider.setAttribute("aria-valuenow","50");
+
+        const before=beforeImg.cloneNode(true), after=afterImg.cloneNode(true);
+        before.className="ba-before"; after.className="ba-after";
+        before.removeAttribute("loading"); after.removeAttribute("loading");
+        slider.append(before,after);
+        slider.insertAdjacentHTML("beforeend",'<span class="ba-label before">BEFORE</span><span class="ba-label after">AFTER</span><span class="ba-divider"></span><span class="ba-handle" aria-hidden="true">‹ ›</span>');
+        container.appendChild(slider);
+        container.classList.add("is-slider-enhanced");
+
+        const setPos=v=>{const n=Math.max(0,Math.min(100,v));slider.style.setProperty("--ba-position",n+"%");slider.setAttribute("aria-valuenow",Math.round(n));};
+        const fromPointer=e=>{const r=slider.getBoundingClientRect();setPos(((e.clientX-r.left)/r.width)*100);};
+        let drag=false;
+        slider.addEventListener("pointerdown",e=>{drag=true;slider.setPointerCapture?.(e.pointerId);fromPointer(e)});
+        slider.addEventListener("pointermove",e=>{if(drag)fromPointer(e)});
+        slider.addEventListener("pointerup",()=>drag=false);
+        slider.addEventListener("pointercancel",()=>drag=false);
+        slider.addEventListener("keydown",e=>{const n=Number(slider.getAttribute("aria-valuenow"))||50;if(e.key==="ArrowLeft"){e.preventDefault();setPos(n-5)}else if(e.key==="ArrowRight"){e.preventDefault();setPos(n+5)}else if(e.key==="Home"){e.preventDefault();setPos(0)}else if(e.key==="End"){e.preventDefault();setPos(100)}});
+    };
+    $$(".uv-before-after, .case-compare").forEach(enhanceBeforeAfter);
+
+    /* STEP 2 — SELECTED WORK HOVER PREVIEW */
+    const canHover=window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    $$(".work-main").forEach(card=>{
+        const preview=$(".work-hover-preview",card);
+        if(!preview||!canHover||prefersReducedMotion)return;
+        const start=()=>{preview.preload="metadata";card.classList.add("is-previewing");safePlay(preview)};
+        const stop=()=>{card.classList.remove("is-previewing");pauseVideo(preview,true)};
+        card.addEventListener("mouseenter",start);card.addEventListener("mouseleave",stop);
+        card.addEventListener("focusin",start);card.addEventListener("focusout",stop);
+    });
+
+    /* STEP 3 — MODAL READING PROGRESS */
+    allModals.forEach(modal=>{
+        const modalWindow=getModalWindow(modal); if(!modalWindow)return;
+        const progress=document.createElement("div");
+        progress.className="modal-progress"; progress.setAttribute("aria-hidden","true");
+        progress.innerHTML='<span class="modal-progress-bar"></span><span class="modal-progress-label">0%</span>';
+        modalWindow.prepend(progress);
+        const bar=$(".modal-progress-bar",progress),label=$(".modal-progress-label",progress);
+        const update=()=>{const max=modalWindow.scrollHeight-modalWindow.clientHeight;const p=max>0?(modalWindow.scrollTop/max)*100:0;const v=Math.max(0,Math.min(100,p));bar.style.width=v+"%";label.textContent=Math.round(v)+"%"};
+        modalWindow.addEventListener("scroll",update,{passive:true});update();
+    });
+
+    /* STEP 4 — PERFORMANCE / ACCESSIBILITY */
+    $$("img").forEach(img=>{if(!img.hasAttribute("decoding"))img.decoding="async"});
+    $$("video").forEach(video=>{video.playsInline=true;if(!video.hasAttribute("preload"))video.preload="metadata"});
+
+
     /* -----------------------------
        INITIAL MODAL STATE
     ----------------------------- */
