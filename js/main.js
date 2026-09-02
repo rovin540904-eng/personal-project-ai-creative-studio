@@ -300,7 +300,8 @@ document.addEventListener("DOMContentLoaded", () => {
     [
         $("#openLessence"),
         $("#openLessenceHero"),
-        $("#openLessenceCaseStudy")
+        $("#openLessenceCaseStudy"),
+        $("#openAeronHero")
     ]
         .filter(Boolean)
         .forEach((opener) => {
@@ -317,6 +318,67 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollModalTop(lessenceModal);
         });
     }
+
+
+    /* -----------------------------
+       AERON Z1 / ZERO GRAVITY MODAL
+    ----------------------------- */
+    const aeronModal = $("#aeronModal");
+
+    [
+        $("#openAeron"),
+        $("#openAeronHero"),
+        $("#openAeronCaseStudy")
+    ]
+        .filter(Boolean)
+        .forEach((opener) => {
+            opener.addEventListener("click", (event) => {
+                event.preventDefault();
+                openModal(aeronModal);
+            });
+        });
+
+    const aeronBackTop = $("#aeronBackTop");
+    if (aeronBackTop) {
+        aeronBackTop.addEventListener("click", () => scrollModalTop(aeronModal));
+    }
+
+    const aeronBackProjects = $("#aeronBackProjects");
+    if (aeronBackProjects) {
+        aeronBackProjects.addEventListener("click", () => closeModal(aeronModal));
+    }
+
+    const aeronFilmJump = $("#openAeronFilm");
+    if (aeronFilmJump) {
+        aeronFilmJump.addEventListener("click", (event) => {
+            event.preventDefault();
+            openModal(aeronModal);
+            window.setTimeout(() => {
+                const film = $("#aeronFinalFilm", aeronModal);
+                const modalWindow = getModalWindow(aeronModal);
+                if (film && modalWindow) {
+                    modalWindow.scrollTo({
+                        top: film.offsetTop,
+                        behavior: prefersReducedMotion ? "auto" : "smooth"
+                    });
+                }
+            }, 80);
+        });
+    }
+
+    $$(".aeron-scroll-cue", aeronModal).forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const target = $(link.getAttribute("href"), aeronModal);
+            const modalWindow = getModalWindow(aeronModal);
+            if (target && modalWindow) {
+                modalWindow.scrollTo({
+                    top: target.offsetTop,
+                    behavior: prefersReducedMotion ? "auto" : "smooth"
+                });
+            }
+        });
+    });
 
 
     /* -----------------------------
@@ -405,6 +467,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (hero.id === "openLessenceHero") {
                     openModal(lessenceModal);
                 }
+
+                if (hero.id === "openAeronHero") {
+                    openModal(aeronModal);
+                }
             });
         });
 
@@ -479,23 +545,104 @@ document.addEventListener("DOMContentLoaded", () => {
         slider.setAttribute("aria-valuemin","0");
         slider.setAttribute("aria-valuemax","100");
         slider.setAttribute("aria-valuenow","50");
+        slider.setAttribute("aria-valuetext","Before 50%, After 50%");
 
         const before=beforeImg.cloneNode(true), after=afterImg.cloneNode(true);
         before.className="ba-before"; after.className="ba-after";
         before.removeAttribute("loading"); after.removeAttribute("loading");
         slider.append(before,after);
-        slider.insertAdjacentHTML("beforeend",'<span class="ba-label before">BEFORE</span><span class="ba-label after">AFTER</span><span class="ba-divider"></span><span class="ba-handle" aria-hidden="true">‹ ›</span>');
+        slider.insertAdjacentHTML(
+            "beforeend",
+            '<span class="ba-label before">BEFORE</span>' +
+            '<span class="ba-label after">AFTER</span>' +
+            '<span class="ba-divider" aria-hidden="true"></span>' +
+            '<span class="ba-drag-zone" aria-hidden="true"></span>' +
+            '<span class="ba-handle" aria-hidden="true">‹ ›</span>'
+        );
         container.appendChild(slider);
         container.classList.add("is-slider-enhanced");
 
-        const setPos=v=>{const n=Math.max(0,Math.min(100,v));slider.style.setProperty("--ba-position",n+"%");slider.setAttribute("aria-valuenow",Math.round(n));};
-        const fromPointer=e=>{const r=slider.getBoundingClientRect();setPos(((e.clientX-r.left)/r.width)*100);};
-        let drag=false;
-        slider.addEventListener("pointerdown",e=>{drag=true;slider.setPointerCapture?.(e.pointerId);fromPointer(e)});
-        slider.addEventListener("pointermove",e=>{if(drag)fromPointer(e)});
-        slider.addEventListener("pointerup",()=>drag=false);
-        slider.addEventListener("pointercancel",()=>drag=false);
-        slider.addEventListener("keydown",e=>{const n=Number(slider.getAttribute("aria-valuenow"))||50;if(e.key==="ArrowLeft"){e.preventDefault();setPos(n-5)}else if(e.key==="ArrowRight"){e.preventDefault();setPos(n+5)}else if(e.key==="Home"){e.preventDefault();setPos(0)}else if(e.key==="End"){e.preventDefault();setPos(100)}});
+        const dragZone = $(".ba-drag-zone", slider);
+        let currentPosition = 50;
+        let dragging = false;
+        let startClientX = 0;
+        let startPosition = 50;
+        let frameId = null;
+        let pendingPosition = 50;
+
+        const setPos = (value) => {
+            const next = Math.max(0, Math.min(100, value));
+            currentPosition = next;
+            slider.style.setProperty("--ba-position", next + "%");
+            slider.setAttribute("aria-valuenow", String(Math.round(next)));
+            slider.setAttribute(
+                "aria-valuetext",
+                `Before ${Math.round(next)}%, After ${Math.round(100 - next)}%`
+            );
+        };
+
+        const queuePosition = (value) => {
+            pendingPosition = value;
+            if (frameId !== null) return;
+
+            frameId = requestAnimationFrame(() => {
+                setPos(pendingPosition);
+                frameId = null;
+            });
+        };
+
+        const beginDrag = (event) => {
+            dragging = true;
+            startClientX = event.clientX;
+            startPosition = currentPosition;
+            dragZone.classList.add("is-dragging");
+            dragZone.setPointerCapture?.(event.pointerId);
+            event.preventDefault();
+        };
+
+        const moveDrag = (event) => {
+            if (!dragging) return;
+
+            const rect = slider.getBoundingClientRect();
+            if (!rect.width) return;
+
+            const deltaPercent = ((event.clientX - startClientX) / rect.width) * 100;
+            queuePosition(startPosition + deltaPercent);
+            event.preventDefault();
+        };
+
+        const endDrag = (event) => {
+            if (!dragging) return;
+            dragging = false;
+            dragZone.classList.remove("is-dragging");
+            dragZone.releasePointerCapture?.(event.pointerId);
+        };
+
+        // 중요:
+        // 이미지 아무 곳을 클릭해도 경계선이 순간 이동하지 않습니다.
+        // 현재 경계선/핸들 주변의 드래그 영역을 잡고 움직일 때만 이동합니다.
+        dragZone.addEventListener("pointerdown", beginDrag);
+        dragZone.addEventListener("pointermove", moveDrag);
+        dragZone.addEventListener("pointerup", endDrag);
+        dragZone.addEventListener("pointercancel", endDrag);
+
+        slider.addEventListener("keydown", (event) => {
+            const step = event.shiftKey ? 10 : 3;
+
+            if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                setPos(currentPosition - step);
+            } else if (event.key === "ArrowRight") {
+                event.preventDefault();
+                setPos(currentPosition + step);
+            } else if (event.key === "Home") {
+                event.preventDefault();
+                setPos(0);
+            } else if (event.key === "End") {
+                event.preventDefault();
+                setPos(100);
+            }
+        });
     };
     $$(".uv-before-after, .case-compare").forEach(enhanceBeforeAfter);
 
@@ -526,6 +673,56 @@ document.addEventListener("DOMContentLoaded", () => {
     $$("img").forEach(img=>{if(!img.hasAttribute("decoding"))img.decoding="async"});
     $$("video").forEach(video=>{video.playsInline=true;if(!video.hasAttribute("preload"))video.preload="metadata"});
 
+
+
+    /* -----------------------------
+       MENTOR REFERENCE / SELECTIVE MICRO INTERACTIONS
+    ----------------------------- */
+    const directionTicker = $(".direction-ticker-track");
+    if (directionTicker && !prefersReducedMotion) {
+        directionTicker.addEventListener("mouseenter", () => {
+            directionTicker.style.animationPlayState = "paused";
+        });
+        directionTicker.addEventListener("mouseleave", () => {
+            directionTicker.style.animationPlayState = "running";
+        });
+    }
+
+    const processItems = $$(".process-list li");
+    if (processItems.length && "IntersectionObserver" in window && !prefersReducedMotion) {
+        const processObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-process-visible");
+                    processObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        processItems.forEach((item) => processObserver.observe(item));
+    }
+
+
+    /* -----------------------------
+       MENTOR FEEDBACK / EVIDENCE REVEAL
+       추가 기능이 아니라 제작 증거의 가독성만 보강합니다.
+    ----------------------------- */
+    const evidenceBlocks = $$(".creator-proof-grid article, .decision-evidence, .trouble-proof, .ai-creator-proof > div");
+
+    if (evidenceBlocks.length && "IntersectionObserver" in window && !prefersReducedMotion) {
+        const evidenceObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-evidence-visible");
+                    evidenceObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.14 });
+
+        evidenceBlocks.forEach((block) => {
+            block.classList.add("evidence-reveal");
+            evidenceObserver.observe(block);
+        });
+    }
 
     /* -----------------------------
        INITIAL MODAL STATE
