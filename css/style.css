@@ -3812,3 +3812,167 @@ button:focus-visible,a:focus-visible,[role="button"]:focus-visible,.ba-slider:fo
     .aeron-final-copy { width:calc(100% - 48px); }
     .aeron-modal-footer { width:calc(100% - 48px); grid-template-columns:1fr; align-items:start; }
 }
+
+/* =========================================================
+   MOTIONARY 2026 — MENTOR REFERENCE REFINEMENT
+   Preserves existing case-study modals and project assets.
+========================================================= */
+:root{--m-lime:#c7ff21;--m-ink:#070908;--m-ivory:#f2eee3;--m-line:rgba(255,255,255,.14)}
+.motionary-intro{position:fixed;inset:0;z-index:99999;background:#050706;color:#f7f5ed;display:grid;place-items:center;transition:opacity .55s ease,visibility .55s ease}.motionary-intro.is-done{opacity:0;visibility:hidden;pointer-events:none}.motionary-intro-inner{width:min(78vw,920px);text-align:center}.intro-step{display:none;align-items:baseline;justify-content:center;gap:22px;letter-spacing:.08em}.intro-step.is-active{display:flex;animation:introIn .28s ease both}.intro-step b{font-size:clamp(18px,2vw,30px);color:var(--m-lime)}.intro-step span{font-size:clamp(42px,8vw,118px);font-weight:900;line-height:.9}.intro-brand{display:none;font-size:clamp(54px,10vw,150px);font-weight:950;letter-spacing:-.055em;line-height:.85}.intro-brand.is-active{display:block;animation:introIn .35s ease both}.intro-brand span{color:var(--m-lime)}.intro-line{height:2px;background:rgba(255,255,255,.15);margin:36px auto 0;max-width:540px;overflow:hidden}.intro-line i{display:block;width:0;height:100%;background:var(--m-lime);transition:width 1.35s cubic-bezier(.2,.8,.2,1)}.motionary-intro.is-running .intro-line i{width:100%}@keyframes introIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+body.intro-lock{overflow:hidden}
+.hero-content h1{font-size:clamp(72px,12vw,210px);letter-spacing:-.065em;line-height:.76}.hero-content h2{font-size:clamp(26px,4.2vw,66px);letter-spacing:-.035em;max-width:1000px}.hero-content h2 span{color:var(--m-lime)}.hero-description{max-width:650px;font-size:clamp(14px,1.2vw,19px)}
+.work-section .section-heading-split h2,.process-editorial-head h2,.about-layout h2,.contact-direct-title h2{font-size:clamp(54px,7vw,118px);line-height:.83;letter-spacing:-.045em}.work-section .section-heading-split h2 span,.process-editorial-head h2 span,.about-layout h2 span,.contact-direct-title h2 span{color:transparent;-webkit-text-stroke:1px currentColor}
+.work-project-head{border-top:1px solid var(--m-line);padding-top:24px}.work-showcase{transition:transform .55s cubic-bezier(.2,.8,.2,1)}.work-showcase:hover{transform:translateY(-6px)}.work-main img,.work-main video,.work-side img{transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s}.work-main:hover img,.work-main:hover video{transform:scale(1.018)}
+.capability-editorial{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.72fr);gap:clamp(36px,6vw,100px);align-items:stretch}.capability-grid{display:block}.capability-grid article{position:relative;padding:26px 10px 26px 0;border-bottom:1px solid rgba(255,255,255,.16);cursor:pointer;transition:padding .3s,opacity .3s}.capability-grid article:first-child{border-top:1px solid rgba(255,255,255,.16)}.capability-grid article:hover,.capability-grid article:focus,.capability-grid article.is-active{padding-left:18px;outline:none}.capability-grid article:hover:before,.capability-grid article:focus:before,.capability-grid article.is-active:before{content:'';position:absolute;left:0;top:22px;bottom:22px;width:3px;background:var(--m-lime)}.capability-grid article h3{font-size:clamp(28px,3.4vw,54px);line-height:.9}.capability-preview{position:sticky;top:110px;align-self:start;margin:0;overflow:hidden;background:#111;min-height:520px}.capability-preview img{width:100%;height:520px;object-fit:cover;display:block;transition:opacity .25s,transform .6s}.capability-preview.is-changing img{opacity:.25;transform:scale(1.025)}.capability-preview figcaption{position:absolute;left:18px;bottom:16px;background:var(--m-lime);color:#050706;padding:8px 10px;font-weight:800;font-size:11px;letter-spacing:.05em}
+.process-editorial-grid{align-items:start}.process-feature{position:sticky;top:120px}.process-list li{min-height:150px;transition:opacity .35s,transform .35s}.process-list li:not(.is-current){opacity:.38}.process-list li.is-current{opacity:1;transform:translateX(-8px)}.process-list li.is-current b{color:var(--m-lime)}
+.director-metrics>div{transition:transform .35s,background .35s}.director-metrics>div:hover{transform:translateY(-5px)}
+.contact-direct{min-height:85vh;display:flex;align-items:center}.contact-direct-title span{color:var(--m-lime)!important;-webkit-text-stroke:0!important}
+@media(max-width:900px){.motionary-intro-inner{width:88vw}.intro-step{gap:12px}.intro-line{margin-top:22px}.capability-editorial{grid-template-columns:1fr}.capability-preview{position:relative;top:auto;min-height:300px;order:-1}.capability-preview img{height:300px}.process-feature{position:relative;top:auto}.hero-content h1{font-size:clamp(58px,18vw,100px)}.work-section .section-heading-split h2,.process-editorial-head h2,.about-layout h2,.contact-direct-title h2{font-size:clamp(42px,13vw,72px)}}
+@media(prefers-reduced-motion:reduce){.motionary-intro{display:none!important}.work-showcase,.work-main img,.work-main video,.capability-preview img{transition:none!important}.process-list li{opacity:1!important;transform:none!important}}
+
+
+/* ===== MENTOR FEEDBACK FINAL PATCH ===== */
+.aeron-brief-response{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:28px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}
+.aeron-brief-response>div{padding:22px;background:#111820}
+.aeron-brief-response span{display:block;margin-bottom:8px;font-size:10px;letter-spacing:.16em;color:#9ca3af}
+.aeron-brief-response b{display:block;margin-bottom:9px;font-size:12px;letter-spacing:.05em;color:#fff}
+.aeron-brief-response p{margin:0;font-size:13px;line-height:1.65;color:#cbd5e1}
+.aeron-film-actions{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:14px}
+.aeron-film-actions .aeron-sound-note{margin:0}
+.aeron-film-actions a{font-size:11px;font-weight:700;letter-spacing:.08em;color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
+.aeron-film-actions a:hover{opacity:.65}
+@media(max-width:800px){.aeron-brief-response{grid-template-columns:1fr}.aeron-film-actions{align-items:flex-start;flex-direction:column}}
+
+
+/* ===== TOP NAV / INTRO HOTFIX ===== */
+.header:not(.scrolled):not(.is-scrolled){
+  color:#fff;
+  background:linear-gradient(180deg,rgba(3,5,4,.42),rgba(3,5,4,0));
+  border-bottom-color:transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.header:not(.scrolled):not(.is-scrolled) .logo,
+.header:not(.scrolled):not(.is-scrolled) .nav a,
+.header:not(.scrolled):not(.is-scrolled) .header-contact{color:#fff;}
+.motionary-intro{font-family:inherit;}
+@media(max-width:900px){
+ .header:not(.scrolled):not(.is-scrolled){background:rgba(5,7,6,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+}
+
+
+/* =========================================================
+   FINAL VISUAL POLISH — HERO / PROJECTS / PROOF / PROCESS / ROLE
+   2026-09-03
+========================================================= */
+
+/* HERO: slightly more editorial, lets the reel breathe */
+.hero-content h1{
+    font-size:clamp(66px,10.7vw,188px);
+    letter-spacing:-.058em;
+    line-height:.78;
+}
+.hero-content h2{
+    max-width:940px;
+    font-size:clamp(25px,3.75vw,60px);
+    line-height:.94;
+}
+.hero-content h2 span{
+    color:#bdf23c;
+    font-size:.96em;
+}
+.hero-overlay{
+    background:
+      linear-gradient(90deg,rgba(3,5,4,.83) 0%,rgba(3,5,4,.64) 34%,rgba(3,5,4,.28) 61%,rgba(3,5,4,.10) 100%),
+      linear-gradient(0deg,rgba(3,5,4,.28),rgba(3,5,4,.05) 45%,rgba(3,5,4,.10));
+}
+.hero-buttons a:not(:first-child){
+    border-color:rgba(255,255,255,.82);
+    background:rgba(5,7,6,.12);
+}
+
+/* PROJECT TITLES: stronger hierarchy and consistent AERON naming */
+.work-project-head h3{
+    font-size:clamp(48px,5.6vw,86px);
+    line-height:.91;
+}
+.project-product-name{
+    display:inline-block;
+    font-size:.48em;
+    letter-spacing:-.025em;
+    color:#5f6861;
+    transform:translateY(-.08em);
+}
+
+/* CASE STUDY: one proof row on desktop */
+.case-project-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+}
+.case-project-card{padding:22px;}
+.case-card-head{min-height:128px;gap:18px;}
+.case-card-head h3{font-size:clamp(25px,2.25vw,38px);}
+.case-card-copy p{font-size:10.5px;line-height:1.62;}
+
+/* PROCESS: 01–08 should work as visible graphic hierarchy */
+.process-list li{
+    grid-template-columns:86px 1fr;
+    min-height:146px;
+    align-items:center;
+}
+.process-list b{
+    font-size:clamp(28px,3vw,48px);
+    line-height:1;
+    letter-spacing:-.04em;
+    opacity:.18;
+    font-weight:900;
+    transition:opacity .28s,color .28s,transform .28s;
+}
+.process-list li.is-current b{
+    color:#79a900;
+    opacity:1;
+    transform:translateX(-4px);
+}
+.process-list strong{font-size:clamp(27px,3.2vw,46px);}
+
+/* MY ROLE: separate capabilities from actual creator responsibility */
+.pipeline-heading{
+    display:grid;
+    grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+    gap:64px;
+    align-items:end;
+    margin:28px 0 58px;
+    padding-bottom:38px;
+    border-bottom:1px solid rgba(255,255,255,.16);
+}
+.pipeline-heading h2{
+    font-size:clamp(52px,7vw,104px);
+    line-height:.84;
+    letter-spacing:-.055em;
+}
+.pipeline-heading h2 span{
+    color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,.68);
+}
+.pipeline-heading p{
+    max-width:440px;
+    margin-left:auto;
+    font-size:12px;
+    line-height:1.8;
+    color:rgba(255,255,255,.62);
+}
+
+/* PERFORMANCE: never animate hidden mobile preview videos */
+@media(max-width:768px){
+    .hero-content h1{font-size:clamp(58px,17vw,94px);}
+    .hero-content h2{font-size:clamp(24px,7.5vw,38px);}
+    .case-project-grid{grid-template-columns:1fr;}
+    .pipeline-heading{grid-template-columns:1fr;gap:20px;margin-bottom:34px;}
+    .pipeline-heading p{margin-left:0;}
+    .process-list li{grid-template-columns:58px 1fr;min-height:118px;}
+    .process-list b{font-size:30px;}
+}
+@media(min-width:769px) and (max-width:1180px){
+    .case-project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .case-project-card-aeron{grid-column:1/-1;}
+}

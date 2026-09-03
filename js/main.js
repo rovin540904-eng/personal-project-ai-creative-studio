@@ -1,3 +1,4 @@
+/* MENTOR FEEDBACK FINAL PATCH: existing reduced-motion, lazy video preload, modal focus/scroll behavior retained. */
 /* =========================================================
    MOTIONARY — MAIN.JS
    URBANVIBE + L'ESSENCE PUR INTEGRATED
@@ -734,3 +735,96 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+/* =========================================================
+   MOTIONARY 2026 — INTRO / CAPABILITY / PROCESS INTERACTION
+========================================================= */
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const intro = document.getElementById('motionaryIntro');
+  if (intro) {
+    const alreadySeen = sessionStorage.getItem('motionaryIntroSeen') === '1';
+    if (alreadySeen || reduced) { intro.remove(); }
+    else {
+      document.body.classList.add('intro-lock');
+      requestAnimationFrame(() => intro.classList.add('is-running'));
+      const steps = [...intro.querySelectorAll('.intro-step')];
+      const brand = intro.querySelector('.intro-brand');
+      const times = window.innerWidth < 768 ? [0,180,360,540,760,1040] : [0,260,520,780,1040,1420];
+      steps.forEach((step, i) => setTimeout(() => {
+        steps.forEach(s => s.classList.remove('is-active'));
+        step.classList.add('is-active');
+      }, times[i]));
+      setTimeout(() => { steps.forEach(s=>s.classList.remove('is-active')); brand?.classList.add('is-active'); }, times[4]);
+      setTimeout(() => {
+        intro.classList.add('is-done'); document.body.classList.remove('intro-lock');
+        sessionStorage.setItem('motionaryIntroSeen','1');
+        setTimeout(()=>intro.remove(),600);
+      }, times[5]);
+    }
+  }
+
+  const capItems = [...document.querySelectorAll('#capabilityGrid article[data-preview]')];
+  const capImage = document.getElementById('capabilityPreviewImage');
+  const capLabel = document.getElementById('capabilityPreviewLabel');
+  const capFigure = capImage?.closest('.capability-preview');
+  const activateCapability = (item) => {
+    if (!item || !capImage) return;
+    capItems.forEach(el=>el.classList.toggle('is-active',el===item));
+    capFigure?.classList.add('is-changing');
+    const next=item.dataset.preview; const label=item.dataset.label||'';
+    const preload=new Image(); preload.onload=()=>{ capImage.src=next; capImage.alt=label; if(capLabel) capLabel.textContent=label; requestAnimationFrame(()=>capFigure?.classList.remove('is-changing')); }; preload.src=next;
+  };
+  capItems.forEach(item=>{ item.addEventListener('mouseenter',()=>activateCapability(item)); item.addEventListener('focus',()=>activateCapability(item)); });
+  if(capItems.length) activateCapability(capItems[0]);
+
+  const processItems=[...document.querySelectorAll('.process-list li')];
+  if(processItems.length && 'IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting){ processItems.forEach(x=>x.classList.remove('is-current')); entry.target.classList.add('is-current'); }});
+    },{rootMargin:'-38% 0px -48% 0px',threshold:0});
+    processItems.forEach((li,i)=>{if(i===0)li.classList.add('is-current');io.observe(li)});
+  }
+})();
+
+
+/* =========================================================
+   FINAL MOBILE PERFORMANCE PATCH
+   - Mobile: do not autoplay decorative project previews.
+   - Below-fold images decode lazily via native browser support.
+   - Hero remains priority content, but heavy previews wait for interaction.
+========================================================= */
+(() => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const saveData = navigator.connection && navigator.connection.saveData;
+    const slowConnection = navigator.connection && /(^|-)2g$/.test(navigator.connection.effectiveType || '');
+
+    document.querySelectorAll('img').forEach((img, index) => {
+        if (!img.hasAttribute('decoding')) img.decoding = 'async';
+        // Preserve above-the-fold browser priority, defer the rest.
+        if (index > 1 && !img.hasAttribute('loading')) img.loading = 'lazy';
+    });
+
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        heroVideo.preload = (isMobile || saveData || slowConnection) ? 'metadata' : 'auto';
+    }
+
+    if (isMobile || saveData || slowConnection) {
+        document.querySelectorAll('.work-hover-preview, .autoplay-when-visible').forEach(video => {
+            video.removeAttribute('autoplay');
+            video.preload = 'none';
+            try { video.pause(); } catch (_) {}
+        });
+    }
+
+    // When a user explicitly opens/plays content, the browser can then fetch it normally.
+    document.querySelectorAll('.work-play, .work-head-actions button, .case-detail-button').forEach(control => {
+        control.addEventListener('pointerdown', () => {
+            const section = control.closest('.work-project-head, .case-project-card, .work-showcase');
+            const nearbyVideo = section?.parentElement?.querySelector('video[preload="none"]') || section?.querySelector('video[preload="none"]');
+            if (nearbyVideo) nearbyVideo.preload = 'metadata';
+        }, { once: true, passive: true });
+    });
+})();
