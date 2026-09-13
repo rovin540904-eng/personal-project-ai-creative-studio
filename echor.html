@@ -1,3572 +1,466 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="ECHØR — AI Character Identity System & Cinematic Hero Film"
-    >
-
-    <title>ECHØR — PRISM Ø</title>
-
-    <link
-        rel="stylesheet"
-        href="css/echor.css"
-    >
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="ECHØR — AI Character Identity / Digital Idol Debut Experience" />
+  <title>ECHØR — PRISM Ø</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/echor.css" />
 </head>
-
-
 <body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-<main>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="ECHØR top">ECHØR <span>/ PRISM Ø</span></a>
+    <nav class="site-nav" aria-label="ECHØR navigation">
+      <a href="#members">Members</a>
+      <a href="#group">Group</a>
+      <a href="#film">Film</a>
+      <a href="#matrix">Matrix</a>
+      <a href="#pipeline">Pipeline</a>
+    </nav>
+    <a class="back-link" href="index.html#projects">Back to Projects ↗</a>
+  </header>
 
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-media">
+        <img src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png" alt="ECHØR four member group final visual" />
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-prism hero-prism-a" aria-hidden="true"></div>
+      <div class="hero-prism hero-prism-b" aria-hidden="true"></div>
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+      <div class="hero-hud hero-hud-top">
+        <span>ECHØR / PRISM Ø</span>
+        <span>DEBUT SIGNAL / 01</span>
+      </div>
 
-<section
-    class="echor2-hero"
-    id="echorHero"
->
-
-    <div
-        class="echor2-hero__media"
-        aria-hidden="true"
-    >
-
-        <img
-            class="echor2-hero__image"
-            src="assets/echor/ECHOR_GROUP_KEY_VISUAL_FINAL_4K_16x9.png"
-            alt=""
-        >
-
-        <div class="echor2-hero__image-overlay"></div>
-
-    </div>
-
-
-    <div
-        class="echor2-prism echor2-prism--pink"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor2-prism echor2-prism--cyan"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor2-prism echor2-prism--violet"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor2-hero__grid"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor2-hero__noise"
-        aria-hidden="true"
-    ></div>
-
-
-    <div class="echor2-hero__hud echor2-container">
-
-        <span>
-            ECHØR / PRISM Ø
-        </span>
-
-        <div>
-
-            <span>
-                DEBUT SIGNAL / 01
-            </span>
-
-            <i></i>
-
-            <span>
-                2026
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <div class="echor2-hero__content echor2-container">
-
-        <p
-            class="echor2-hero__eyebrow"
-            data-echor2-reveal
-        >
-            AI CHARACTER IDENTITY
-            <span>/</span>
-            DIGITAL IDOL DEBUT PROJECT
-        </p>
-
-
-        <h1
-            class="echor2-hero__title"
-            data-echor2-reveal
-        >
-
-            <span class="echor2-title-line">
-                ECHO THE
-                <em>IDENTITY.</em>
-            </span>
-
-            <span class="echor2-title-line">
-                PRISM Ø
-                <em>AWAKENS.</em>
-            </span>
-
+      <div class="hero-copy reveal">
+        <p class="eyebrow">AI CHARACTER IDENTITY / DIGITAL IDOL DEBUT PROJECT</p>
+        <h1 class="hero-title">
+          <span>ECHO THE IDENTITY.</span>
+          <span><em>PRISM Ø AWAKENS.</em></span>
         </h1>
+        <p class="hero-desc">4명의 AI 캐릭터를 하나의 아이덴티티 시스템으로 설계하고,<br />이미지에서 40초 시네마틱 Hero Film까지 확장한 AI 아이돌 프로젝트.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" data-scroll-target="#film">WATCH HERO FILM ↗</button>
+          <button class="btn btn-ghost" type="button" data-scroll-target="#members">MEET THE MEMBERS ↓</button>
+        </div>
+      </div>
 
+      <div class="hero-stats reveal reveal-delay-1">
+        <div><strong>04</strong><span>MEMBERS</span></div>
+        <div><strong>01</strong><span>IDENTITY SYSTEM</span></div>
+        <div><strong>05</strong><span>SCENES</span></div>
+        <div><strong>40 SEC</strong><span>HERO FILM</span></div>
+      </div>
 
-        <p
-            class="echor2-hero__description"
-            data-echor2-reveal
-        >
-            4명의 AI 캐릭터를 하나의 아이덴티티 시스템으로 설계하고,
-            <br>
-            이미지에서 40초 시네마틱 Hero Film까지 확장한
-            AI 아이돌 프로젝트.
-        </p>
+      <div class="hero-signature">EIRA / NOVA / LYRA / CYRA</div>
+      <div class="hero-traits">QUIET PRESENCE · CONTROLLED TENSION · RESTRAINED WARMTH · CLEAR FOCUS</div>
+      <div class="scroll-cue">SCROLL TO SYNCHRONIZE ↓</div>
+    </section>
 
-
-        <div
-            class="echor2-hero__actions"
-            data-echor2-reveal
-        >
-
-            <a
-                href="#heroFilm"
-                class="echor2-btn echor2-btn--primary"
-            >
-                WATCH HERO FILM
-                <span>↗</span>
-            </a>
-
-
-            <a
-                href="#members"
-                class="echor2-btn echor2-btn--secondary"
-            >
-                MEET THE MEMBERS
-                <span>↓</span>
-            </a>
-
+    <!-- OVERVIEW -->
+    <section class="section section-light overview" id="overview">
+      <div class="wrap">
+        <div class="section-head split-head reveal">
+          <div>
+            <p class="section-index">01 / PROJECT OVERVIEW</p>
+            <h2>BUILDING ONE<br />IDENTITY<br />ACROSS FOUR<br />AI CHARACTERS.</h2>
+          </div>
+          <div class="head-side">
+            <p class="mini-label">CORE CHALLENGE</p>
+            <p>How can four AI-generated characters remain recognizable across images and motion?</p>
+            <p class="kr-copy">단순히 네 명을 생성하는 것이 아니라, 각 멤버의 얼굴·실루엣·정서적 역할을 고정하고 반복 생성 과정에서도 동일한 사람으로 인식되도록 설계했습니다.</p>
+          </div>
         </div>
 
-
-        <div
-            class="echor2-hero__members"
-            data-echor2-reveal
-        >
-
-            <div>
-                <strong>EIRA</strong>
-                <span>QUIET PRESENCE</span>
-            </div>
-
-            <div>
-                <strong>NOVA</strong>
-                <span>CONTROLLED TENSION</span>
-            </div>
-
-            <div>
-                <strong>LYRA</strong>
-                <span>RESTRAINED WARMTH</span>
-            </div>
-
-            <div>
-                <strong>CYRA</strong>
-                <span>CLEAR FOCUS</span>
-            </div>
-
+        <div class="overview-visual reveal">
+          <img src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png" alt="ECHØR project overview visual" />
+          <div class="overview-tags">
+            <span>IDENTITY LOCK</span><span>REFERENCE CONTROL</span><span>GROUP SYSTEM</span><span>MOTION EXTENSION</span>
+          </div>
         </div>
 
-    </div>
+        <div class="overview-grid reveal">
+          <article><span>01</span><h3>IDENTITY</h3><p>멤버별 고유 얼굴·헤어·실루엣을 MASTER 기준으로 정의.</p></article>
+          <article><span>02</span><h3>CONTROL</h3><p>정면·3/4·프로필·상반신·전신 레퍼런스로 변형 범위 관리.</p></article>
+          <article><span>03</span><h3>SYSTEM</h3><p>4명의 차이를 하나의 PRISM Ø 비주얼 언어로 통합.</p></article>
+          <article><span>04</span><h3>MOTION</h3><p>정지 이미지의 아이덴티티를 40초 Hero Film으로 확장.</p></article>
+        </div>
+      </div>
+    </section>
 
-
-    <div
-        class="echor2-hero__data-wrap echor2-container"
-        data-echor2-reveal
-    >
-
-        <div class="echor2-hero__data">
-
-            <div>
-                <strong>04</strong>
-                <span>MEMBERS</span>
-            </div>
-
-            <div>
-                <strong>01</strong>
-                <span>IDENTITY SYSTEM</span>
-            </div>
-
-            <div>
-                <strong>05</strong>
-                <span>SCENES</span>
-            </div>
-
-            <div>
-                <strong>40 SEC</strong>
-                <span>HERO FILM</span>
-            </div>
-
+    <!-- MEMBERS -->
+    <section class="section section-dark members" id="members">
+      <div class="wrap">
+        <div class="section-head split-head reveal">
+          <div>
+            <p class="section-index">02 / CHARACTER IDENTITY</p>
+            <h2>MEET THE<br /><span class="gradient-text">FOUR RESONANCES.</span></h2>
+          </div>
+          <div class="head-side">
+            <p class="mini-label">FOUR IDENTITIES. ONE SIGNAL.</p>
+            <p class="kr-copy">각기 다른 인상과 실루엣을 가진 네 명의 멤버를 하나의 그룹 아이덴티티 안에서 설계했습니다.</p>
+          </div>
         </div>
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     01 / PROJECT OVERVIEW
-========================================================= -->
-
-<section
-    class="echor-overview"
-    id="overview"
->
-
-    <div class="echor-container">
-
-        <p class="echor-section-index">
-            01 / PROJECT OVERVIEW
-        </p>
-
-
-        <div class="echor-overview-grid">
-
-            <div>
-
-                <p class="echor-kicker">
-                    AI CHARACTER IDENTITY SYSTEM
-                </p>
-
-                <h2>
-                    BUILDING ONE IDENTITY
-                    <br>
-                    ACROSS FOUR
-                    <br>
-                    AI CHARACTERS.
-                </h2>
-
-            </div>
+        <div class="member-grid">
+          <article class="member-card reveal" data-member="eira" tabindex="0" role="button" aria-label="EIRA identity details">
+            <div class="member-photo"><img src="assets/echor/EIRA/EIRA_FRONT_FINAL.png" alt="EIRA" /></div>
+            <div class="member-meta"><span>MEMBER 01</span><span>RESIDUAL ROSE</span></div>
+            <h3>EIRA</h3><p>QUIET PRESENCE</p><div class="member-footer"><span>MASTER IDENTITY</span><b>VIEW IDENTITY ↗</b></div>
+          </article>
+          <article class="member-card reveal reveal-delay-1" data-member="nova" tabindex="0" role="button" aria-label="NOVA identity details">
+            <div class="member-photo"><img src="assets/echor/NOVA/NOVA_FRONT_FINAL.png" alt="NOVA" /></div>
+            <div class="member-meta"><span>MEMBER 02</span><span>ECHO BLUE</span></div>
+            <h3>NOVA</h3><p>CONTROLLED TENSION</p><div class="member-footer"><span>MASTER IDENTITY</span><b>VIEW IDENTITY ↗</b></div>
+          </article>
+          <article class="member-card reveal reveal-delay-2" data-member="lyra" tabindex="0" role="button" aria-label="LYRA identity details">
+            <div class="member-photo"><img src="assets/echor/LYRA/LYRA_FRONT_FINAL.png" alt="LYRA" /></div>
+            <div class="member-meta"><span>MEMBER 03</span><span>PALE GOLD</span></div>
+            <h3>LYRA</h3><p>RESTRAINED WARMTH</p><div class="member-footer"><span>MASTER IDENTITY</span><b>VIEW IDENTITY ↗</b></div>
+          </article>
+          <article class="member-card reveal reveal-delay-3" data-member="cyra" tabindex="0" role="button" aria-label="CYRA identity details">
+            <div class="member-photo"><img src="assets/echor/CYRA/CYRA_FRONT_FINAL.png" alt="CYRA" /></div>
+            <div class="member-meta"><span>MEMBER 04</span><span>PRISM SILVER</span></div>
+            <h3>CYRA</h3><p>CLEAR FOCUS</p><div class="member-footer"><span>MASTER IDENTITY</span><b>VIEW IDENTITY ↗</b></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
 
-            <div class="echor-overview-copy">
 
-                <span>
-                    CREATIVE CHALLENGE
-                </span>
-
-                <p>
-                    How can four AI-generated characters
-                    remain recognizable across images
-                    and motion?
-                </p>
-
-                <p>
-                    개별 캐릭터의 얼굴·헤어·체형·실루엣을
-                    기준으로 정의하고 정면, 측면, 전신,
-                    그룹 비주얼과 영상까지 동일성을
-                    반복 검수했습니다.
-                </p>
-
-            </div>
-
+    <!-- GROUP KEY VISUAL -->
+    <section class="section section-dark group-key" id="group">
+      <div class="wrap">
+        <div class="section-head split-head reveal">
+          <div>
+            <p class="section-index">03 / GROUP KEY VISUAL</p>
+            <h2>FROM FOUR SIGNALS<br /><span class="gradient-text">TO ONE FREQUENCY.</span></h2>
+          </div>
+          <div class="head-side">
+            <p class="mini-label">04 SIGNALS / 01 FREQUENCY</p>
+            <p class="kr-copy">서로 다른 네 개의 아이덴티티가 하나의 ECHØR 시그널로 동기화됩니다.</p>
+          </div>
         </div>
 
+        <div class="duo-grid">
+          <figure class="duo-card reveal">
+            <div class="duo-media"><img src="assets/echor/GROUP/EIRA_NOVA_FINAL.png" alt="EIRA and NOVA Signal 01" /></div>
+            <figcaption><span>SIGNAL 01 / EIRA × NOVA</span><strong>QUIET × TENSION</strong><small>RESIDUAL ROSE × ECHO BLUE</small></figcaption>
+          </figure>
+          <figure class="duo-card reveal reveal-delay-1">
+            <div class="duo-media"><img src="assets/echor/GROUP/LYRA_CYRA_FINAL.png" alt="LYRA and CYRA Signal 02" /></div>
+            <figcaption><span>SIGNAL 02 / LYRA × CYRA</span><strong>WARMTH × FOCUS</strong><small>PALE GOLD × PRISM SILVER</small></figcaption>
+          </figure>
+        </div>
 
-        <figure class="echor-overview-visual">
+        <div class="sync reveal" aria-label="Synchronization 04 to 01">
+          <span>02 DUO SYSTEMS</span><div class="sync-line"><i></i><b>PRISM Ø<br /><small>SYNCHRONIZING</small></b><i></i></div><span>01 GROUP IDENTITY</span>
+        </div>
 
-            <img
-                src="assets/echor/ECHOR_GROUP_KEY_VISUAL_FINAL_4K_16x9.png"
-                alt="ECHØR Group Key Visual"
-            >
-
-            <figcaption>
-                GROUP KEY VISUAL / PRISM Ø
-            </figcaption>
-
+        <figure class="group-final reveal">
+          <div class="group-final-media"><img src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png" alt="ECHØR final four member group" /></div>
+          <div class="group-final-overlay">
+            <p>FINAL GROUP SIGNAL / PRISM Ø</p>
+            <span>04 → 01</span>
+            <h3>ECHØR / FINAL FREQUENCY</h3>
+            <strong>FOUR MEMBERS.<br />ONE VISUAL LANGUAGE.</strong>
+          </div>
         </figure>
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     02 / CHARACTER IDENTITY
-========================================================= -->
-
-<section
-    class="echor-members2"
-    id="members"
->
-
-    <div
-        class="echor-members2__glow
-               echor-members2__glow--left"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor-members2__glow
-               echor-members2__glow--right"
-        aria-hidden="true"
-    ></div>
+        <div class="principles reveal">
+          <article><span>01</span><h3>MEMBER DISTINCTION</h3><p>얼굴·헤어·정서적 역할을 분리.</p></article>
+          <article><span>02</span><h3>WARDROBE UNITY</h3><p>하나의 컬렉션 안에서 서로 다른 실루엣.</p></article>
+          <article><span>03</span><h3>PRISM LANGUAGE</h3><p>빛과 굴절을 그룹의 공통 시각 언어로 활용.</p></article>
+          <article><span>04</span><h3>GROUP BALANCE</h3><p>개인 정체성과 완전체의 균형을 동시에 유지.</p></article>
+        </div>
+      </div>
+    </section>
 
 
-    <div class="echor-container">
 
-        <header class="echor-members2__header">
+    <!-- HERO FILM -->
+    <section class="section section-dark hero-film" id="film">
+      <div class="wrap">
+        <div class="film-kicker reveal"><span>OFFICIAL HERO FILM / PRISM Ø</span><span>40 SEC · 05 SCENES · 16:9</span></div>
+        <div class="section-head split-head reveal">
+          <div><p class="section-index">HERO FILM</p><h2>ENTER<br /><span class="gradient-text">THE PRISM.</span></h2></div>
+          <div class="head-side"><p class="mini-label">FROM STILL IDENTITY TO MOTION.</p><p class="kr-copy">정지 이미지에서 구축한 아이덴티티를 5개의 시퀀스로 확장해 하나의 40초 Hero Film으로 완성했습니다.</p></div>
+        </div>
 
+        <div class="film-stage reveal">
+          <video id="heroFilm" preload="metadata" poster="assets/echor/VIDEO/ECHOR_HERO_FILM_THUMBNAIL_FINAL_16x9.png" playsinline>
+            <source src="assets/echor/VIDEO/ECHOR_HERO_FILM_PRISM_O_FINAL_40S_16x9.mp4" type="video/mp4" />
+          </video>
+          <button class="film-play" id="filmPlay" type="button" aria-label="Play ECHØR Hero Film"><span>▶</span><b>PLAY OFFICIAL FILM</b><small>PRISM Ø / 40 SEC</small></button>
+          <div class="film-frame-label"><span>ECHØR — PRISM Ø</span><span>OFFICIAL FILM 001</span></div>
+        </div>
+
+        <div class="film-meta reveal">
+          <div><span>DURATION</span><strong>40 SEC</strong></div><div><span>FORMAT</span><strong>16:9 / FHD</strong></div><div><span>GENERATION</span><strong>VEO</strong></div><div><span>FINAL EDIT</span><strong>PREMIERE PRO</strong></div>
+        </div>
+
+        <div class="scene-timeline reveal">
+          <button class="scene-step active" type="button" data-time="0"><span>01</span><b>WORLD REVEAL</b><small>00:00</small></button>
+          <button class="scene-step" type="button" data-time="8"><span>02</span><b>EIRA × NOVA</b><small>00:08</small></button>
+          <button class="scene-step" type="button" data-time="16"><span>03</span><b>LYRA × CYRA</b><small>00:16</small></button>
+          <button class="scene-step" type="button" data-time="24"><span>04</span><b>FOUR MEMBER HERO</b><small>00:24</small></button>
+          <button class="scene-step" type="button" data-time="32"><span>05</span><b>PRISM Ø</b><small>00:32</small></button>
+        </div>
+        <p class="film-closing reveal">5 SCENES. 40 SECONDS. <strong>ONE CONTROLLED IDENTITY SYSTEM.</strong></p>
+      </div>
+    </section>
+
+    <!-- IDENTITY MATRIX -->
+    <section class="section section-matrix" id="matrix">
+      <div class="wrap">
+        <div class="section-head split-head reveal">
+          <div><p class="section-index">IDENTITY MATRIX</p><h2>PLAY THE<br /><span class="gradient-text">FOUR IDENTITIES.</span></h2></div>
+          <div class="head-side"><p class="mini-label">IDENTITY AS A TRACK SYSTEM</p><p class="kr-copy">각 멤버의 정체성을 앨범/음원 플레이어처럼 탐색하며 하나의 그룹 시스템 안에서 차이를 읽도록 설계했습니다.</p></div>
+        </div>
+
+        <div class="matrix-player reveal">
+          <div class="matrix-cover"><img src="assets/echor/GROUP/ECHOR_GROUP_MATRIX_COVER.png" alt="ECHØR Identity Matrix cover" /><div class="matrix-cover-badge">PRISM Ø<br /><span>IDENTITY MATRIX</span></div></div>
+          <div class="matrix-panel">
+            <div class="matrix-now"><span>NOW PLAYING</span><strong id="matrixName">EIRA</strong><p id="matrixPhrase">QUIET PRESENCE</p></div>
+            <div class="matrix-progress"><i id="matrixProgress"></i></div>
+            <div class="matrix-controls" aria-hidden="true"><span>◀</span><b>◉</b><span>▶</span></div>
+            <div class="matrix-tracks">
+              <button class="matrix-track active" type="button" data-name="EIRA" data-phrase="QUIET PRESENCE" data-index="1"><span>01</span><b>EIRA</b><small>RESIDUAL ROSE</small></button>
+              <button class="matrix-track" type="button" data-name="NOVA" data-phrase="CONTROLLED TENSION" data-index="2"><span>02</span><b>NOVA</b><small>ECHO BLUE</small></button>
+              <button class="matrix-track" type="button" data-name="LYRA" data-phrase="RESTRAINED WARMTH" data-index="3"><span>03</span><b>LYRA</b><small>PALE GOLD</small></button>
+              <button class="matrix-track" type="button" data-name="CYRA" data-phrase="CLEAR FOCUS" data-index="4"><span>04</span><b>CYRA</b><small>PRISM SILVER</small></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELEASE FLOW -->
+    <section class="section section-dark release" id="release">
+      <div class="wrap">
+        <div class="section-head split-head reveal">
+          <div><p class="section-index">RELEASE FLOW / PROMOTION SCHEDULE</p><h2>THE DEBUT<br /><span class="gradient-text">UNFOLDS IN SIGNALS.</span></h2></div>
+          <div class="head-side"><p class="mini-label">FROM DESIGN TO LAUNCH</p><p class="kr-copy">제작 과정을 실제 아이돌 컴백 프로모션 스케줄처럼 재구성해 결과뿐 아니라 제작 흐름 자체가 하나의 콘텐츠가 되도록 했습니다.</p></div>
+        </div>
+        <div class="release-line reveal">
+          <article><span>T−35</span><b>CHARACTER DESIGN</b><p>4 MASTER IDENTITIES</p></article>
+          <article><span>T−28</span><b>REFERENCE CONTROL</b><p>ANGLE / BODY / FACE LOCK</p></article>
+          <article><span>T−21</span><b>DUO DEVELOPMENT</b><p>SIGNAL 01 / SIGNAL 02</p></article>
+          <article><span>T−14</span><b>GROUP VISUAL</b><p>04 → 01 FREQUENCY</p></article>
+          <article><span>T−07</span><b>HERO FILM</b><p>05 SCENES / 40 SEC</p></article>
+          <article><span>D-DAY</span><b>PORTFOLIO LAUNCH</b><p>ECHØR / PRISM Ø</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCEPT GALLERY -->
+    <section class="section section-gallery" id="gallery">
+      <div class="wrap">
+        <div class="section-head split-head reveal">
+          <div><p class="section-index">CONCEPT PHOTO RELEASE</p><h2>RELEASE THE<br /><span class="gradient-text">VISUAL SIGNALS.</span></h2></div>
+          <div class="head-side"><p class="mini-label">NOT A 3 × 2 GALLERY.</p><p class="kr-copy">일반 포트폴리오 갤러리가 아니라 멤버별 콘셉트 포토가 순차 공개되는 컴백 사이트의 Release Wall처럼 구성했습니다.</p></div>
+        </div>
+        <div class="gallery-release">
+          <button class="gallery-item gallery-item-large reveal" type="button" data-image="assets/echor/EIRA/EIRA_FRONT_FINAL.png" data-title="EIRA / CONCEPT PHOTO 01"><img src="assets/echor/EIRA/EIRA_FRONT_FINAL.png" alt="EIRA concept photo" /><span>01 / EIRA</span></button>
+          <button class="gallery-item reveal" type="button" data-image="assets/echor/NOVA/NOVA_FRONT_FINAL.png" data-title="NOVA / CONCEPT PHOTO 02"><img src="assets/echor/NOVA/NOVA_FRONT_FINAL.png" alt="NOVA concept photo" /><span>02 / NOVA</span></button>
+          <button class="gallery-item reveal" type="button" data-image="assets/echor/LYRA/LYRA_FRONT_FINAL.png" data-title="LYRA / CONCEPT PHOTO 03"><img src="assets/echor/LYRA/LYRA_FRONT_FINAL.png" alt="LYRA concept photo" /><span>03 / LYRA</span></button>
+          <button class="gallery-item reveal" type="button" data-image="assets/echor/CYRA/CYRA_FRONT_FINAL.png" data-title="CYRA / CONCEPT PHOTO 04"><img src="assets/echor/CYRA/CYRA_FRONT_FINAL.png" alt="CYRA concept photo" /><span>04 / CYRA</span></button>
+          <button class="gallery-item gallery-item-wide reveal" type="button" data-image="assets/echor/GROUP/ECHOR_GROUP_FINAL.png" data-title="GROUP / FINAL FREQUENCY"><img src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png" alt="ECHØR group concept photo" /><span>05 / GROUP</span></button>
+          <button class="gallery-item reveal" type="button" data-image="assets/echor/VIDEO/ECHOR_HERO_FILM_THUMBNAIL_FINAL_16x9.png" data-title="MOTION / HERO FILM"><img src="assets/echor/VIDEO/ECHOR_HERO_FILM_THUMBNAIL_FINAL_16x9.png" alt="ECHØR motion still" /><span>06 / MOTION</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIPELINE -->
+    <section class="section section-light pipeline" id="pipeline">
+      <div class="wrap">
+        <div class="section-head split-head reveal">
+          <div>
+            <p class="section-index">AI PRODUCTION PIPELINE / CASE STUDY</p>
+            <h2>CONTROL THE<br />PROCESS,<br /><span>NOT JUST THE PROMPT.</span></h2>
+          </div>
+          <div class="head-side">
+            <p class="mini-label">PROBLEM → DECISION → REFINEMENT → OUTPUT</p>
+            <p class="kr-copy">생성 결과를 그대로 채택하지 않고, 얼굴 변화와 멤버 구분 문제를 발견한 뒤 MASTER 기준 검수와 반복 비교를 통해 결과를 통제했습니다.</p>
+          </div>
+        </div>
+
+        <div class="case-study-band reveal">
+          <article class="case-card case-problem">
+            <span>01 / PROBLEM</span>
+            <h3>FACE DRIFT</h3>
+            <p>그룹 생성 과정에서 멤버 얼굴이 평균화되거나 다른 인물처럼 변형되는 문제가 발생했습니다.</p>
+            <b>IDENTITY CONSISTENCY ↓</b>
+          </article>
+
+          <article class="case-card case-decision">
+            <span>02 / DECISION</span>
+            <h3>MASTER-FIRST VALIDATION</h3>
+            <p>각 멤버의 FRONT MASTER를 절대 기준으로 설정하고, 얼굴·헤어·실루엣을 반복 비교했습니다.</p>
+            <b>REFERENCE CONTROL ↑</b>
+          </article>
+
+          <article class="case-card case-output">
+            <span>03 / OUTPUT</span>
+            <h3>CONTROLLED SYSTEM</h3>
+            <p>한 번의 생성보다 비교·선택·수정 과정을 설계해 이미지에서 모션까지 일관된 시스템으로 확장했습니다.</p>
+            <b>04 IDENTITIES → 01 SYSTEM</b>
+          </article>
+        </div>
+
+        <div class="pipeline-refinement reveal">
+          <div class="pipeline-subhead">
             <div>
-
-                <p class="echor-members2__index">
-                    02 / CHARACTER IDENTITY
-                </p>
-
-                <h2>
-                    MEET THE
-                    <br>
-
-                    <span>
-                        FOUR RESONANCES.
-                    </span>
-                </h2>
-
+              <span>VISUAL REFINEMENT</span>
+              <h3>V01 → V02 → FINAL</h3>
             </div>
-
-
-            <div class="echor-members2__intro">
-
-                <strong>
-                    FOUR IDENTITIES.
-                    <br>
-                    ONE SIGNAL.
-                </strong>
-
-                <p>
-                    각기 다른 인상과 실루엣을 가진
-                    네 명의 멤버를 하나의 그룹
-                    아이덴티티 안에서 설계했습니다.
-                </p>
-
-            </div>
-
-        </header>
-
-
-        <div class="echor-members2__grid">
-
-
-            <button
-                class="echor-member2 echor-member2--eira"
-                type="button"
-                data-echor-member="eira"
-            >
-
-                <div class="echor-member2__media">
-
-                    <img
-                        src="assets/echor/EIRA/EIRA_FRONT_FINAL.png"
-                        alt="ECHØR EIRA"
-                    >
-
-                    <div class="echor-member2__shade"></div>
-                    <div class="echor-member2__scan"></div>
-
-                </div>
-
-
-                <div class="echor-member2__top">
-                    <span>MEMBER 01</span>
-                    <span>MASTER IDENTITY</span>
-                </div>
-
-
-                <div class="echor-member2__bottom">
-
-                    <span class="echor-member2__signal">
-                        RESIDUAL ROSE
-                    </span>
-
-                    <h3>EIRA</h3>
-
-                    <p>QUIET PRESENCE</p>
-
-                    <span class="echor-member2__view">
-                        VIEW IDENTITY ↗
-                    </span>
-
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor-member2 echor-member2--nova"
-                type="button"
-                data-echor-member="nova"
-            >
-
-                <div class="echor-member2__media">
-
-                    <img
-                        src="assets/echor/NOVA/NOVA_FRONT_FINAL.png"
-                        alt="ECHØR NOVA"
-                    >
-
-                    <div class="echor-member2__shade"></div>
-                    <div class="echor-member2__scan"></div>
-
-                </div>
-
-
-                <div class="echor-member2__top">
-                    <span>MEMBER 02</span>
-                    <span>MASTER IDENTITY</span>
-                </div>
-
-
-                <div class="echor-member2__bottom">
-
-                    <span class="echor-member2__signal">
-                        ECHO BLUE
-                    </span>
-
-                    <h3>NOVA</h3>
-
-                    <p>CONTROLLED TENSION</p>
-
-                    <span class="echor-member2__view">
-                        VIEW IDENTITY ↗
-                    </span>
-
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor-member2 echor-member2--lyra"
-                type="button"
-                data-echor-member="lyra"
-            >
-
-                <div class="echor-member2__media">
-
-                    <img
-                        src="assets/echor/LYRA/LYRA_FRONT_FINAL.png"
-                        alt="ECHØR LYRA"
-                    >
-
-                    <div class="echor-member2__shade"></div>
-                    <div class="echor-member2__scan"></div>
-
-                </div>
-
-
-                <div class="echor-member2__top">
-                    <span>MEMBER 03</span>
-                    <span>MASTER IDENTITY</span>
-                </div>
-
-
-                <div class="echor-member2__bottom">
-
-                    <span class="echor-member2__signal">
-                        PALE GOLD
-                    </span>
-
-                    <h3>LYRA</h3>
-
-                    <p>RESTRAINED WARMTH</p>
-
-                    <span class="echor-member2__view">
-                        VIEW IDENTITY ↗
-                    </span>
-
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor-member2 echor-member2--cyra"
-                type="button"
-                data-echor-member="cyra"
-            >
-
-                <div class="echor-member2__media">
-
-                    <img
-                        src="assets/echor/CYRA/CYRA_FRONT_FINAL.png"
-                        alt="ECHØR CYRA"
-                    >
-
-                    <div class="echor-member2__shade"></div>
-                    <div class="echor-member2__scan"></div>
-
-                </div>
-
-
-                <div class="echor-member2__top">
-                    <span>MEMBER 04</span>
-                    <span>MASTER IDENTITY</span>
-                </div>
-
-
-                <div class="echor-member2__bottom">
-
-                    <span class="echor-member2__signal">
-                        PRISM SILVER
-                    </span>
-
-                    <h3>CYRA</h3>
-
-                    <p>CLEAR FOCUS</p>
-
-                    <span class="echor-member2__view">
-                        VIEW IDENTITY ↗
-                    </span>
-
-                </div>
-
-            </button>
-
+            <p>FACE / HAIR / WARDROBE / GROUP READABILITY를 같은 기준으로 비교하고 수정했습니다.</p>
+          </div>
+
+          <div class="pipeline-refine-grid">
+            <figure class="pipeline-refine-card">
+              <div class="pipeline-refine-image">
+                <img src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_V01.png" alt="ECHØR visual refinement V01" />
+                <span>V01</span>
+              </div>
+              <figcaption>
+                <strong>IDENTITY DRIFT</strong>
+                <p>FACE DRIFT / HEAVY WARDROBE / WEAK MEMBER DISTINCTION</p>
+              </figcaption>
+            </figure>
+
+            <figure class="pipeline-refine-card">
+              <div class="pipeline-refine-image">
+                <img src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_V02.png" alt="ECHØR visual refinement V02" />
+                <span>V02</span>
+              </div>
+              <figcaption>
+                <strong>REFERENCE CONTROL</strong>
+                <p>FACE LOCK / HAIR CONTROL / CLEARER MEMBER DISTINCTION</p>
+              </figcaption>
+            </figure>
+
+            <figure class="pipeline-refine-card pipeline-refine-final">
+              <div class="pipeline-refine-image">
+                <img src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_FINAL.png" alt="ECHØR final refinement" />
+                <span>FINAL</span>
+              </div>
+              <figcaption>
+                <strong>CONTROLLED IDENTITY</strong>
+                <p>WARDROBE BALANCE / GROUP READABILITY / FINAL VISUAL SYSTEM</p>
+              </figcaption>
+            </figure>
+          </div>
         </div>
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     MEMBER MODAL
-========================================================= -->
-
-<div
-    class="echor-member-modal2"
-    id="memberModal"
-    aria-hidden="true"
->
-
-    <button
-        class="echor-member-modal2__backdrop"
-        type="button"
-        aria-label="Close"
-    ></button>
-
-
-    <div
-        class="echor-member-modal2__panel"
-        role="dialog"
-        aria-modal="true"
-    >
-
-        <button
-            class="echor-member-modal2__close"
-            type="button"
-            aria-label="Close member identity"
-        >
-            ×
-        </button>
-
-
-        <div class="echor-member-modal2__heading">
-
-            <p id="modalMemberNumber">
-                MEMBER 01
-            </p>
-
-            <h2 id="modalMemberName">
-                EIRA
-            </h2>
-
-            <div>
-
-                <span id="modalMemberKeyword">
-                    QUIET PRESENCE
-                </span>
-
-                <span id="modalMemberColor">
-                    RESIDUAL ROSE
-                </span>
-
-            </div>
-
+        <div class="pipeline-flow pipeline-flow-strong reveal">
+          <article>
+            <span>01</span><small>DEFINE</small>
+            <h3>IDENTITY DESIGN</h3>
+            <p>얼굴·헤어·감정 톤·실루엣을 멤버별 MASTER 기준으로 정의.</p>
+            <b>NANO BANANA</b>
+          </article>
+          <i>→</i>
+          <article>
+            <span>02</span><small>CONTROL</small>
+            <h3>REFERENCE SYSTEM</h3>
+            <p>정면·3/4·프로필·상반신·전신으로 확장하며 동일성 검증.</p>
+            <b>MASTER REFERENCE</b>
+          </article>
+          <i>→</i>
+          <article>
+            <span>03</span><small>REFINE</small>
+            <h3>GROUP DEVELOPMENT</h3>
+            <p>듀오에서 그룹으로 확장하며 멤버 구분과 비주얼 통일성 조정.</p>
+            <b>COMPARE / SELECT / REFINE</b>
+          </article>
+          <i>→</i>
+          <article>
+            <span>04</span><small>EXTEND</small>
+            <h3>MOTION GENERATION</h3>
+            <p>정지 아이덴티티를 씬 단위 움직임과 40초 Hero Film으로 확장.</p>
+            <b>VEO</b>
+          </article>
+          <i>→</i>
+          <article>
+            <span>05</span><small>DELIVER</small>
+            <h3>FINAL EDIT</h3>
+            <p>장면 구조·리듬·사운드·엔드 프레임을 하나의 데뷔 경험으로 완성.</p>
+            <b>PREMIERE PRO</b>
+          </article>
         </div>
 
-
-        <div class="echor-member-modal2__views">
-
-            <figure>
-                <img id="modalFront" alt="">
-                <figcaption>FRONT</figcaption>
-            </figure>
-
-            <figure>
-                <img id="modalThreeQuarter" alt="">
-                <figcaption>3/4 VIEW</figcaption>
-            </figure>
-
-            <figure>
-                <img id="modalProfile" alt="">
-                <figcaption>PROFILE</figcaption>
-            </figure>
-
-            <figure>
-                <img id="modalUpper" alt="">
-                <figcaption>UPPER BODY</figcaption>
-            </figure>
-
-        </div>
-
-
-        <div class="echor-member-modal2__system">
-
-            <figure>
-
-                <img id="modalFull" alt="">
-
-                <figcaption>
-                    FULL BODY
-                </figcaption>
-
-            </figure>
-
-
-            <div class="echor-member-modal2__body">
-
-                <span>
-                    BODY SYSTEM
-                </span>
-
-                <dl>
-
-                    <div>
-                        <dt>HEIGHT</dt>
-                        <dd id="modalHeight"></dd>
-                    </div>
-
-                    <div>
-                        <dt>BUILD</dt>
-                        <dd id="modalBuild"></dd>
-                    </div>
-
-                    <div>
-                        <dt>PROPORTION</dt>
-                        <dd id="modalProportion"></dd>
-                    </div>
-
-                    <div>
-                        <dt>STANCE</dt>
-                        <dd id="modalStance"></dd>
-                    </div>
-
-                    <div>
-                        <dt>SILHOUETTE</dt>
-                        <dd id="modalSilhouette"></dd>
-                    </div>
-
-                </dl>
-
-            </div>
-
-
-            <div class="echor-member-modal2__check">
-
-                <span>
-                    CONSISTENCY CHECK
-                </span>
-
-                <ul>
-                    <li>FACE PROPORTION</li>
-                    <li>EYE SHAPE</li>
-                    <li>HAIR IDENTITY</li>
-                    <li>BODY PROPORTION</li>
-                    <li>SILHOUETTE</li>
-                </ul>
-
-                <strong>
-                    ONE IDENTITY.
-                    <br>
-                    CONTROLLED REFERENCES.
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     CHARACTER SHEETS
-========================================================= -->
-
-<section class="echor-character-sheets">
-
-    <div class="echor-container">
-
-        <p class="echor-section-index">
-            CHARACTER SHEETS
-        </p>
-
-
-        <div class="echor-character-sheets__grid">
-
-            <img
-                src="assets/echor/EIRA/EIRA_CHARACTER_SHEET_FINAL.png"
-                alt="EIRA Character Sheet"
-            >
-
-            <img
-                src="assets/echor/NOVA/NOVA_CHARACTER_SHEET_FINAL.png"
-                alt="NOVA Character Sheet"
-            >
-
-            <img
-                src="assets/echor/LYRA/LYRA_CHARACTER_SHEET_FINAL.png"
-                alt="LYRA Character Sheet"
-            >
-
-            <img
-                src="assets/echor/CYRA/CYRA_CHARACTER_SHEET_FINAL.png"
-                alt="CYRA Character Sheet"
-            >
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     03 / GROUP KEY VISUAL
-========================================================= -->
-
-<section
-    class="echor3-group"
-    id="groupKeyVisual"
->
-
-    <div
-        class="echor3-group__ambient
-               echor3-group__ambient--pink"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor3-group__ambient
-               echor3-group__ambient--cyan"
-        aria-hidden="true"
-    ></div>
-
-
-    <div class="echor-container">
-
-        <header
-            class="echor3-header echor3-reveal"
-        >
-
-            <div>
-
-                <p class="echor3-index">
-                    03 / GROUP KEY VISUAL
-                </p>
-
-                <h2>
-                    FROM FOUR SIGNALS
-                    <br>
-
-                    <span>
-                        TO ONE FREQUENCY.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="echor3-header__copy">
-
-                <strong>
-                    04 SIGNALS
-                    <br>
-                    01 FREQUENCY
-                </strong>
-
-                <p>
-                    서로 다른 네 개의 아이덴티티가
-                    하나의 ECHØR 시그널로 동기화됩니다.
-                </p>
-
-            </div>
-
-        </header>
-
-
-        <div class="echor3-duos">
-
-            <figure
-                class="echor3-duo
-                       echor3-duo--left
-                       echor3-reveal"
-            >
-
-                <div class="echor3-duo__media">
-
-                    <img
-                        src="assets/echor/GROUP/EIRA_NOVA_FINAL.png"
-                        alt="ECHØR EIRA and NOVA Final Duo"
-                    >
-
-                    <div class="echor3-duo__shade"></div>
-
-                    <span class="echor3-duo__number">
-                        SIGNAL / 01
-                    </span>
-
-                </div>
-
-
-                <figcaption>
-
-                    <div>
-                        <span>EIRA × NOVA</span>
-
-                        <h3>
-                            QUIET
-                            <i>×</i>
-                            TENSION
-                        </h3>
-                    </div>
-
-                    <p>
-                        RESIDUAL ROSE
-                        <br>
-                        × ECHO BLUE
-                    </p>
-
-                </figcaption>
-
-            </figure>
-
-
-            <figure
-                class="echor3-duo
-                       echor3-duo--right
-                       echor3-reveal"
-            >
-
-                <div class="echor3-duo__media">
-
-                    <img
-                        src="assets/echor/GROUP/LYRA_CYRA_FINAL.png"
-                        alt="ECHØR LYRA and CYRA Final Duo"
-                    >
-
-                    <div class="echor3-duo__shade"></div>
-
-                    <span class="echor3-duo__number">
-                        SIGNAL / 02
-                    </span>
-
-                </div>
-
-
-                <figcaption>
-
-                    <div>
-                        <span>LYRA × CYRA</span>
-
-                        <h3>
-                            WARMTH
-                            <i>×</i>
-                            FOCUS
-                        </h3>
-                    </div>
-
-                    <p>
-                        PALE GOLD
-                        <br>
-                        × PRISM SILVER
-                    </p>
-
-                </figcaption>
-
-            </figure>
-
-        </div>
-
-
-        <div
-            class="echor3-sync echor3-reveal"
-        >
-
-            <div class="echor3-sync__edge">
-                <span>02 DUO SYSTEMS</span>
-            </div>
-
-
-            <div class="echor3-sync__line">
-
-                <span
-                    class="echor3-sync__beam"
-                    aria-hidden="true"
-                ></span>
-
-                <div class="echor3-sync__node">
-
-                    <span>PRISM</span>
-                    <strong>Ø</strong>
-                    <small>SYNCHRONIZING</small>
-
-                </div>
-
-            </div>
-
-
-            <div class="echor3-sync__edge echor3-sync__edge--right">
-                <span>01 GROUP IDENTITY</span>
-            </div>
-
-        </div>
-
-
-        <div
-            class="echor3-final echor3-reveal"
-        >
-
-            <div class="echor3-final__top">
-
-                <span>
-                    FINAL GROUP SIGNAL / PRISM Ø
-                </span>
-
-                <span>
-                    04 → 01
-                </span>
-
-            </div>
-
-
-            <figure class="echor3-final__visual">
-
-                <img
-                    src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png"
-                    alt="ECHØR Final Group Comeback Key Visual"
-                >
-
-                <div
-                    class="echor3-final__glow"
-                    aria-hidden="true"
-                ></div>
-
-
-                <div class="echor3-final__copy">
-
-                    <p>
-                        ECHØR / FINAL FREQUENCY
-                    </p>
-
-                    <h3>
-                        FOUR MEMBERS.
-                        <br>
-                        ONE VISUAL LANGUAGE.
-                    </h3>
-
-                </div>
-
-            </figure>
-
-
-            <div class="echor3-principles">
-
-                <div>
-                    <span>01</span>
-                    <strong>MEMBER DISTINCTION</strong>
-                    <p>얼굴·헤어·실루엣의 개별 정체성을 유지합니다.</p>
-                </div>
-
-                <div>
-                    <span>02</span>
-                    <strong>WARDROBE UNITY</strong>
-                    <p>서로 다른 디자인을 하나의 컬러 시스템으로 연결합니다.</p>
-                </div>
-
-                <div>
-                    <span>03</span>
-                    <strong>PRISM LANGUAGE</strong>
-                    <p>빛과 반사를 ECHØR의 공통 시각 언어로 사용합니다.</p>
-                </div>
-
-                <div>
-                    <span>04</span>
-                    <strong>GROUP BALANCE</strong>
-                    <p>각 멤버의 개성과 그룹 전체의 균형을 함께 제어합니다.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     06 / VISUAL DEVELOPMENT
-========================================================= -->
-
-<section class="echor-visual-development">
-
-    <div class="echor-container">
-
-        <p class="echor-section-index">
-            06 / VISUAL DEVELOPMENT
-        </p>
-
-
-        <h2>
-            REFINE,
-            <br>
-            NOT JUST GENERATE.
-        </h2>
-
-
-        <div class="echor-visual-development__grid">
-
-            <figure>
-
-                <img
-                    src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_V01.png"
-                    alt="ECHØR Visual V01"
-                >
-
-                <figcaption>
-                    V01 / FACE DRIFT
-                </figcaption>
-
-            </figure>
-
-
-            <figure>
-
-                <img
-                    src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_V02.png"
-                    alt="ECHØR Visual V02"
-                >
-
-                <figcaption>
-                    V02 / IDENTITY LOCK
-                </figcaption>
-
-            </figure>
-
-
-            <figure>
-
-                <img
-                    src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_FINAL.png"
-                    alt="ECHØR Visual Final"
-                >
-
-                <figcaption>
-                    FINAL / CONTROLLED IDENTITY
-                </figcaption>
-
-            </figure>
-
-        </div>
-
-
-        <p class="echor-visual-development__process">
-            OBSERVE → COMPARE → REFINE → VALIDATE
-        </p>
-
-
-        <blockquote>
-            GOOD AI OUTPUT IS NOT THE END.
-            CONSISTENT DECISIONS CREATE THE FINAL.
+        <blockquote class="pipeline-quote reveal">
+          CONSISTENCY IS A DESIGN DECISION,<br />
+          <strong>NOT A GENERATION SETTING.</strong>
         </blockquote>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     07 / HERO FILM
-========================================================= -->
-
-<section
-    class="echor-film echor4-film"
-    id="heroFilm"
->
-
-    <div
-        class="echor4-film__ambient
-               echor4-film__ambient--violet"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor4-film__ambient
-               echor4-film__ambient--cyan"
-        aria-hidden="true"
-    ></div>
-
-
-    <div
-        class="echor4-film__background-type"
-        aria-hidden="true"
-    >
-        PRISM Ø
-    </div>
-
-
-    <div class="echor-container">
-
-        <header class="echor4-film__header">
-
-            <div>
-
-                <p class="echor4-film__index">
-                    07 / HERO FILM
-                </p>
-
-                <h2>
-                    THE SIGNAL
-                    <br>
-
-                    <span>
-                        ENTERS MOTION.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="echor4-film__intro">
-
-                <strong>
-                    FROM STILL IDENTITY
-                    <br>
-                    TO MOTION.
-                </strong>
-
-                <p>
-                    네 명의 캐릭터 아이덴티티를
-                    정지 이미지에서 모션으로 확장하고,
-                    5개의 장면을 하나의 40초
-                    시네마틱 필름으로 완성했습니다.
-                </p>
-
-            </div>
-
-        </header>
-
-
-        <div class="echor4-premiere">
-
-            <div>
-
-                <span class="echor4-premiere__dot"></span>
-
-                <span>
-                    OFFICIAL HERO FILM
-                </span>
-
-            </div>
-
-            <div>
-                ECHØR / PRISM Ø
-            </div>
-
+    <!-- CLOSING -->
+    <section class="closing" id="closing">
+      <img class="closing-bg" src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png" alt="ECHØR final launch" />
+      <div class="closing-overlay"></div>
+      <div class="closing-content reveal">
+        <p>FINAL LAUNCH / PORTFOLIO CASE STUDY</p>
+        <h2>ECHØR</h2>
+        <h3>ONE SYSTEM.<br /><span class="gradient-text">FOUR RESONANCES.</span></h3>
+        <p class="closing-copy">Character Identity → Reference Control → Group Development → Motion → Final Launch</p>
+        <div class="closing-actions">
+          <a class="btn btn-primary" href="#top">REPLAY EXPERIENCE ↑</a>
+          <a class="btn btn-ghost" href="index.html#projects">BACK TO PROJECTS ↗</a>
         </div>
-
-
-        <div class="echor4-film__frame">
-
-            <div
-                class="echor4-film__frame-glow"
-                aria-hidden="true"
-            ></div>
-
-
-            <div class="echor4-film__frame-top">
-
-                <span>
-                    OFFICIAL HERO FILM
-                </span>
-
-                <span>
-                    40 SEC / PRISM Ø
-                </span>
-
-            </div>
-
-
-            <div class="echor4-film__video-shell">
-
-                <video
-                    class="echor-film__video echor4-film__video"
-                    controls
-                    playsinline
-                    preload="metadata"
-                    poster="assets/echor/VIDEO/ECHOR_HERO_FILM_THUMBNAIL_FINAL_16x9.png"
-                >
-
-                    <source
-                        src="assets/echor/VIDEO/ECHOR_HERO_FILM_PRISM_O_FINAL_40S_16x9.mp4"
-                        type="video/mp4"
-                    >
-
-                </video>
-
-
-                <div
-                    class="echor4-film__video-prism"
-                    aria-hidden="true"
-                ></div>
-
-            </div>
-
-
-            <div class="echor4-film__frame-bottom">
-
-                <div class="echor4-film__status">
-
-                    <span class="echor4-film__status-dot"></span>
-
-                    <span id="echorFilmStatus">
-                        READY / USER CONTROLLED
-                    </span>
-
-                </div>
-
-                <span>
-                    16:9 / FHD
-                </span>
-
-            </div>
-
-
-            <div
-                class="echor4-film__signal-line"
-                aria-hidden="true"
-            >
-                <span></span>
-            </div>
-
-        </div>
-
-
-        <div class="echor4-meta">
-
-            <div>
-                <span>TITLE</span>
-                <strong>ECHØR — PRISM Ø</strong>
-            </div>
-
-            <div>
-                <span>DURATION</span>
-                <strong>40 SEC</strong>
-            </div>
-
-            <div>
-                <span>FORMAT</span>
-                <strong>16:9 / FHD</strong>
-            </div>
-
-            <div>
-                <span>GENERATION</span>
-                <strong>VEO</strong>
-            </div>
-
-            <div>
-                <span>FINAL EDIT</span>
-                <strong>PREMIERE PRO</strong>
-            </div>
-
-        </div>
-
-
-        <section class="echor4-scenes">
-
-            <div class="echor4-scenes__heading">
-
-                <div>
-
-                    <span>
-                        FILM STRUCTURE
-                    </span>
-
-                    <h3>
-                        FIVE SCENES.
-                        <br>
-                        ONE SIGNAL.
-                    </h3>
-
-                </div>
-
-
-                <p>
-                    40초 안에서 세계관 공개부터
-                    듀오, 그룹, 최종 PRISM Ø까지
-                    순차적으로 확장했습니다.
-                </p>
-
-            </div>
-
-
-            <div class="echor4-scenes__list">
-
-                <div class="echor4-scene is-active" tabindex="0">
-                    <span class="echor4-scene__number">01</span>
-                    <strong>WORLD SIGNAL</strong>
-                    <p>OPENING THE FREQUENCY</p>
-                    <span class="echor4-scene__mark">↗</span>
-                </div>
-
-                <div class="echor4-scene" tabindex="0">
-                    <span class="echor4-scene__number">02</span>
-                    <strong>EIRA × NOVA</strong>
-                    <p>QUIET × TENSION</p>
-                    <span class="echor4-scene__mark">↗</span>
-                </div>
-
-                <div class="echor4-scene" tabindex="0">
-                    <span class="echor4-scene__number">03</span>
-                    <strong>LYRA × CYRA</strong>
-                    <p>WARMTH × FOCUS</p>
-                    <span class="echor4-scene__mark">↗</span>
-                </div>
-
-                <div class="echor4-scene" tabindex="0">
-                    <span class="echor4-scene__number">04</span>
-                    <strong>FOUR MEMBER HERO</strong>
-                    <p>04 SIGNALS → 01 GROUP</p>
-                    <span class="echor4-scene__mark">↗</span>
-                </div>
-
-                <div class="echor4-scene" tabindex="0">
-                    <span class="echor4-scene__number">05</span>
-                    <strong>PRISM Ø</strong>
-                    <p>FINAL FREQUENCY</p>
-                    <span class="echor4-scene__mark">↗</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="echor4-motion">
-
-            <div class="echor4-motion__label">
-
-                <span>
-                    MOTION LANGUAGE
-                </span>
-
-                <p>
-                    움직임의 속도와 빛의 방향까지
-                    하나의 시각 언어로 통제했습니다.
-                </p>
-
-            </div>
-
-
-            <div class="echor4-motion__items">
-
-                <div>
-                    <span>01</span>
-                    <strong>SLOW PUSH-IN</strong>
-                </div>
-
-                <div>
-                    <span>02</span>
-                    <strong>CONTROLLED MOTION</strong>
-                </div>
-
-                <div>
-                    <span>03</span>
-                    <strong>PRISM LIGHT</strong>
-                </div>
-
-                <div>
-                    <span>04</span>
-                    <strong>IDENTITY PRESERVATION</strong>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <div class="echor4-film__ending">
-
-            <p>
-                ECHØR / HERO FILM SYSTEM
-            </p>
-
-            <h3>
-                5 SCENES.
-                <br>
-                40 SECONDS.
-                <br>
-
-                <span>
-                    ONE CONTROLLED
-                    <br>
-                    IDENTITY SYSTEM.
-                </span>
-            </h3>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     08 / IDENTITY MATRIX
-========================================================= -->
-
-<section
-    class="echor5-matrix"
-    id="identityMatrix"
->
-
-    <div
-        class="echor5-matrix__glow
-               echor5-matrix__glow--pink"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor5-matrix__glow
-               echor5-matrix__glow--cyan"
-        aria-hidden="true"
-    ></div>
-
-
-    <div class="echor-container">
-
-        <header class="echor5-header">
-
-            <div>
-
-                <p class="echor5-index">
-                    08 / IDENTITY MATRIX
-                </p>
-
-                <h2>
-                    FIVE MODULES.
-                    <br>
-
-                    <span>
-                        ONE IDENTITY SIGNAL.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="echor5-header__copy">
-
-                <strong>
-                    SYSTEM ARCHIVE
-                    <br>
-                    VOL. 01
-                </strong>
-
-                <p>
-                    캐릭터 기준 설계부터 그룹 비주얼과
-                    Hero Film까지, ECHØR 제작 과정을
-                    하나의 시스템 트랙으로 구성했습니다.
-                </p>
-
-            </div>
-
-        </header>
-
-
-        <div class="echor5-player">
-
-            <div class="echor5-cover">
-
-                <div class="echor5-cover__media">
-
-                    <img
-                        src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png"
-                        alt="ECHØR Identity Matrix cover"
-                    >
-
-                    <div class="echor5-cover__shade"></div>
-
-
-                    <div class="echor5-cover__top">
-                        <span>ECHØR</span>
-                        <span>PRISM Ø</span>
-                    </div>
-
-
-                    <div class="echor5-cover__bottom">
-
-                        <span>
-                            SYSTEM ARCHIVE
-                        </span>
-
-                        <h3>
-                            IDENTITY
-                            <br>
-                            MATRIX
-                        </h3>
-
-                        <p>
-                            VOL. 01 / 2026
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="echor5-equalizer"
-                    aria-hidden="true"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-            </div>
-
-
-            <div class="echor5-tracklist">
-
-                <div class="echor5-tracklist__head">
-                    <span>SYSTEM TRACKS</span>
-                    <span>05 MODULES</span>
-                </div>
-
-
-                <button
-                    class="echor5-track is-active"
-                    type="button"
-                    data-matrix-track="0"
-                >
-                    <span class="echor5-track__number">01</span>
-
-                    <span class="echor5-track__main">
-                        <strong>CHARACTER MASTER REFERENCE</strong>
-                        <small>FACE · HAIR · SILHOUETTE</small>
-                    </span>
-
-                    <span class="echor5-track__duration">
-                        04 MEMBERS
-                    </span>
-                </button>
-
-
-                <button
-                    class="echor5-track"
-                    type="button"
-                    data-matrix-track="1"
-                >
-                    <span class="echor5-track__number">02</span>
-
-                    <span class="echor5-track__main">
-                        <strong>DUO IDENTITY DEVELOPMENT</strong>
-                        <small>EIRA × NOVA / LYRA × CYRA</small>
-                    </span>
-
-                    <span class="echor5-track__duration">
-                        02 UNITS
-                    </span>
-                </button>
-
-
-                <button
-                    class="echor5-track"
-                    type="button"
-                    data-matrix-track="2"
-                >
-                    <span class="echor5-track__number">03</span>
-
-                    <span class="echor5-track__main">
-                        <strong>GROUP KEY VISUAL</strong>
-                        <small>FOUR SIGNALS → ONE FREQUENCY</small>
-                    </span>
-
-                    <span class="echor5-track__duration">
-                        01 GROUP
-                    </span>
-                </button>
-
-
-                <button
-                    class="echor5-track"
-                    type="button"
-                    data-matrix-track="3"
-                >
-                    <span class="echor5-track__number">04</span>
-
-                    <span class="echor5-track__main">
-                        <strong>VISUAL REFINEMENT</strong>
-                        <small>OBSERVE · COMPARE · REFINE</small>
-                    </span>
-
-                    <span class="echor5-track__duration">
-                        03 STAGES
-                    </span>
-                </button>
-
-
-                <button
-                    class="echor5-track"
-                    type="button"
-                    data-matrix-track="4"
-                >
-                    <span class="echor5-track__number">05</span>
-
-                    <span class="echor5-track__main">
-                        <strong>HERO FILM EXPANSION</strong>
-                        <small>STILL IDENTITY → MOTION</small>
-                    </span>
-
-                    <span class="echor5-track__duration">
-                        40 SEC
-                    </span>
-                </button>
-
-            </div>
-
-
-            <aside
-                class="echor5-detail"
-                aria-live="polite"
-            >
-
-                <div class="echor5-detail__status">
-
-                    <div>
-                        <span class="echor5-detail__dot"></span>
-                        <span id="matrixStatus">NOW SYNCING</span>
-                    </div>
-
-                    <span id="matrixModule">
-                        MODULE 01
-                    </span>
-
-                </div>
-
-
-                <div class="echor5-detail__main">
-
-                    <span class="echor5-detail__kicker">
-                        ACTIVE SYSTEM
-                    </span>
-
-                    <h3 id="matrixTitle">
-                        CHARACTER
-                        <br>
-                        MASTER REFERENCE
-                    </h3>
-
-                    <p id="matrixDescription">
-                        각 멤버의 얼굴, 헤어, 체형과 실루엣을
-                        Master Reference로 정의해 이후 생성물의
-                        일관성을 판단하는 기준으로 사용했습니다.
-                    </p>
-
-                </div>
-
-
-                <div class="echor5-detail__meta">
-
-                    <div>
-                        <span>INPUT</span>
-                        <strong id="matrixInput">MEMBER IDENTITY</strong>
-                    </div>
-
-                    <div>
-                        <span>PROCESS</span>
-                        <strong id="matrixProcess">REFERENCE LOCK</strong>
-                    </div>
-
-                    <div>
-                        <span>OUTPUT</span>
-                        <strong id="matrixOutput">04 MASTER SYSTEMS</strong>
-                    </div>
-
-                    <div>
-                        <span>TOOL</span>
-                        <strong id="matrixTool">NANO BANANA / FIGMA</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="echor5-controls">
-
-                    <button
-                        type="button"
-                        id="matrixPrev"
-                        aria-label="Previous identity module"
-                    >
-                        ←
-                    </button>
-
-                    <button
-                        class="echor5-controls__play"
-                        type="button"
-                        id="matrixPlay"
-                        aria-label="Auto cycle identity modules"
-                    >
-                        <span id="matrixPlayIcon">
-                            ▶
-                        </span>
-                    </button>
-
-                    <button
-                        type="button"
-                        id="matrixNext"
-                        aria-label="Next identity module"
-                    >
-                        →
-                    </button>
-
-                </div>
-
-
-                <div class="echor5-progress">
-
-                    <div class="echor5-progress__labels">
-                        <span id="matrixCounter">01 / 05</span>
-                        <span>IDENTITY SIGNAL</span>
-                    </div>
-
-                    <div class="echor5-progress__rail">
-                        <span
-                            id="matrixProgress"
-                            style="width:20%;"
-                        ></span>
-                    </div>
-
-                </div>
-
-            </aside>
-
-        </div>
-
-
-        <div class="echor5-footer">
-
-            <p>
-                CHARACTER → DUO → GROUP → REFINE → MOTION
-            </p>
-
-            <strong>
-                ONE SYSTEM.
-
-                <span>
-                    FIVE CONNECTED OUTPUTS.
-                </span>
-            </strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     09 / RELEASE FLOW
-========================================================= -->
-
-<section
-    class="echor6-release"
-    id="releaseFlow"
->
-
-    <div
-        class="echor6-release__glow
-               echor6-release__glow--pink"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor6-release__glow
-               echor6-release__glow--cyan"
-        aria-hidden="true"
-    ></div>
-
-
-    <div class="echor-container">
-
-        <header class="echor6-header">
-
-            <div>
-
-                <p class="echor6-index">
-                    09 / RELEASE FLOW
-                </p>
-
-                <h2>
-                    COUNTDOWN TO
-                    <br>
-
-                    <span>
-                        ECHØR LAUNCH.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="echor6-header__copy">
-
-                <strong>
-                    PROMOTION SCHEDULE
-                    <br>
-                    06 RELEASE SIGNALS
-                </strong>
-
-                <p>
-                    캐릭터 설계에서 Hero Film과
-                    포트폴리오 공개까지의 제작 과정을
-                    실제 아이돌 컴백 스케줄러처럼
-                    하나의 릴리즈 플로우로 구성했습니다.
-                </p>
-
-            </div>
-
-        </header>
-
-
-        <div class="echor6-countdown">
-
-            <span>T−21</span>
-
-            <div class="echor6-countdown__rail">
-                <div
-                    class="echor6-countdown__progress"
-                    id="releaseProgress"
-                ></div>
-            </div>
-
-            <span>T−00</span>
-
-        </div>
-
-
-        <div class="echor6-grid">
-
-
-            <button
-                class="echor6-card is-active"
-                type="button"
-                data-release-index="0"
-            >
-
-                <div class="echor6-card__media">
-
-                    <img
-                        src="assets/echor/EIRA/EIRA_FRONT_FINAL.png"
-                        alt="Character Design"
-                    >
-
-                    <div class="echor6-card__shade"></div>
-
-                </div>
-
-                <div class="echor6-card__top">
-                    <span>T−21</span>
-                    <span>SIGNAL 01</span>
-                </div>
-
-                <div class="echor6-card__bottom">
-                    <small>IDENTITY ORIGIN</small>
-
-                    <h3>
-                        CHARACTER
-                        <br>
-                        DESIGN
-                    </h3>
-
-                    <span>RELEASED ↗</span>
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor6-card"
-                type="button"
-                data-release-index="1"
-            >
-
-                <div class="echor6-card__media">
-
-                    <img
-                        src="assets/echor/EIRA/EIRA_CHARACTER_SHEET_FINAL.png"
-                        alt="Reference Control"
-                    >
-
-                    <div class="echor6-card__shade"></div>
-
-                </div>
-
-                <div class="echor6-card__top">
-                    <span>T−18</span>
-                    <span>SIGNAL 02</span>
-                </div>
-
-                <div class="echor6-card__bottom">
-                    <small>MASTER LOCK</small>
-
-                    <h3>
-                        REFERENCE
-                        <br>
-                        CONTROL
-                    </h3>
-
-                    <span>RELEASED ↗</span>
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor6-card"
-                type="button"
-                data-release-index="2"
-            >
-
-                <div class="echor6-card__media">
-
-                    <img
-                        src="assets/echor/GROUP/EIRA_NOVA_FINAL.png"
-                        alt="Duo Development"
-                    >
-
-                    <div class="echor6-card__shade"></div>
-
-                </div>
-
-                <div class="echor6-card__top">
-                    <span>T−14</span>
-                    <span>SIGNAL 03</span>
-                </div>
-
-                <div class="echor6-card__bottom">
-                    <small>UNIT SIGNAL</small>
-
-                    <h3>
-                        DUO
-                        <br>
-                        DEVELOPMENT
-                    </h3>
-
-                    <span>RELEASED ↗</span>
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor6-card"
-                type="button"
-                data-release-index="3"
-            >
-
-                <div class="echor6-card__media">
-
-                    <img
-                        src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png"
-                        alt="Group Visual"
-                    >
-
-                    <div class="echor6-card__shade"></div>
-
-                </div>
-
-                <div class="echor6-card__top">
-                    <span>T−10</span>
-                    <span>SIGNAL 04</span>
-                </div>
-
-                <div class="echor6-card__bottom">
-                    <small>FOUR TO ONE</small>
-
-                    <h3>
-                        GROUP
-                        <br>
-                        VISUAL
-                    </h3>
-
-                    <span>RELEASED ↗</span>
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor6-card"
-                type="button"
-                data-release-index="4"
-            >
-
-                <div class="echor6-card__media">
-
-                    <img
-                        src="assets/echor/VIDEO/ECHOR_HERO_FILM_THUMBNAIL_FINAL_16x9.png"
-                        alt="Hero Film"
-                    >
-
-                    <div class="echor6-card__shade"></div>
-
-                </div>
-
-                <div class="echor6-card__top">
-                    <span>T−05</span>
-                    <span>SIGNAL 05</span>
-                </div>
-
-                <div class="echor6-card__bottom">
-                    <small>MOTION PREMIERE</small>
-
-                    <h3>
-                        HERO
-                        <br>
-                        FILM
-                    </h3>
-
-                    <span>RELEASED ↗</span>
-                </div>
-
-            </button>
-
-
-
-            <button
-                class="echor6-card echor6-card--launch"
-                type="button"
-                data-release-index="5"
-            >
-
-                <div class="echor6-card__media">
-
-                    <img
-                        src="assets/echor/ECHOR_GROUP_KEY_VISUAL_FINAL_4K_16x9.png"
-                        alt="Portfolio Launch"
-                    >
-
-                    <div class="echor6-card__shade"></div>
-
-                </div>
-
-                <div class="echor6-card__top">
-                    <span>T−00</span>
-                    <span>SIGNAL 06</span>
-                </div>
-
-                <div class="echor6-card__bottom">
-                    <small>ECHØR LIVE</small>
-
-                    <h3>
-                        PORTFOLIO
-                        <br>
-                        LAUNCH
-                    </h3>
-
-                    <span>FINAL RELEASE ↗</span>
-                </div>
-
-            </button>
-
-        </div>
-
-
-        <div
-            class="echor6-detail"
-            aria-live="polite"
-        >
-
-            <div class="echor6-detail__signal">
-
-                <span>
-                    ACTIVE RELEASE
-                </span>
-
-                <strong id="releaseSignal">
-                    SIGNAL 01 / T−21
-                </strong>
-
-            </div>
-
-
-            <div class="echor6-detail__main">
-
-                <small id="releaseKicker">
-                    IDENTITY ORIGIN
-                </small>
-
-                <h3 id="releaseTitle">
-                    CHARACTER
-                    <br>
-                    DESIGN
-                </h3>
-
-                <p id="releaseDescription">
-                    ECHØR의 출발점으로 네 멤버의 인상,
-                    헤어, 체형, 실루엣과 성격 키워드를 정의해
-                    각 캐릭터의 기본 정체성을 설계했습니다.
-                </p>
-
-            </div>
-
-
-            <div class="echor6-detail__meta">
-
-                <div>
-                    <span>OUTPUT</span>
-                    <strong id="releaseOutput">04 MEMBER IDENTITIES</strong>
-                </div>
-
-                <div>
-                    <span>SYSTEM</span>
-                    <strong id="releaseSystem">FACE · HAIR · SILHOUETTE</strong>
-                </div>
-
-                <div>
-                    <span>NEXT RELEASE</span>
-                    <strong id="releaseNext">REFERENCE CONTROL</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="echor6-ending">
-
-            <p>
-                T−21 → T−00 / SIX RELEASE SIGNALS
-            </p>
-
-            <h3>
-                EVERY RELEASE
-                <br>
-
-                <span>
-                    BUILDS THE IDENTITY.
-                </span>
-            </h3>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     10 / CONCEPT GALLERY
-========================================================= -->
-
-<section
-    class="echor7-gallery"
-    id="conceptGallery"
->
-
-    <div
-        class="echor7-gallery__glow
-               echor7-gallery__glow--rose"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor7-gallery__glow
-               echor7-gallery__glow--cyan"
-        aria-hidden="true"
-    ></div>
-
-
-    <div class="echor-container">
-
-        <header class="echor7-header">
-
-            <div>
-
-                <p class="echor7-index">
-                    10 / CONCEPT GALLERY
-                </p>
-
-                <h2>
-                    CONCEPT PHOTO
-                    <br>
-
-                    <span>
-                        RELEASE ARCHIVE.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="echor7-header__copy">
-
-                <strong>
-                    PRISM Ø
-                    <br>
-                    CONCEPT SERIES
-                </strong>
-
-                <p>
-                    네 명의 멤버와 Group, Motion 비주얼을
-                    일반 갤러리가 아닌 아이돌 Concept Photo
-                    Release 형식으로 재구성했습니다.
-                </p>
-
-            </div>
-
-        </header>
-
-
-        <div class="echor7-releasebar">
-
-            <div>
-
-                <span class="echor7-releasebar__dot"></span>
-
-                <span>
-                    CONCEPT PHOTO / NOW RELEASED
-                </span>
-
-            </div>
-
-            <div>
-                06 VISUAL SIGNALS / PRISM Ø
-            </div>
-
-        </div>
-
-
-        <div class="echor7-feature">
-
-            <div class="echor7-feature__visual">
-
-                <img
-                    id="conceptFeatureImage"
-                    src="assets/echor/EIRA/EIRA_UPPER_BODY_FINAL.png"
-                    alt="ECHØR EIRA Concept Photo"
-                >
-
-                <div class="echor7-feature__shade"></div>
-
-                <div
-                    class="echor7-feature__scan"
-                    aria-hidden="true"
-                ></div>
-
-
-                <div class="echor7-feature__top">
-
-                    <span id="conceptFeatureCode">
-                        CONCEPT PHOTO 01
-                    </span>
-
-                    <span id="conceptFeatureType">
-                        MEMBER RELEASE
-                    </span>
-
-                </div>
-
-
-                <div class="echor7-feature__watermark">
-                    PRISM Ø
-                </div>
-
-
-                <div class="echor7-feature__bottom">
-
-                    <span id="conceptFeatureSignal">
-                        RESIDUAL ROSE
-                    </span>
-
-                    <h3 id="conceptFeatureTitle">
-                        EIRA
-                    </h3>
-
-                    <p id="conceptFeatureSubtitle">
-                        QUIET PRESENCE
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <aside class="echor7-feature__info">
-
-                <div class="echor7-feature__info-top">
-
-                    <span>
-                        CURRENT RELEASE
-                    </span>
-
-                    <span id="conceptFeatureCounter">
-                        01 / 06
-                    </span>
-
-                </div>
-
-
-                <div class="echor7-feature__info-main">
-
-                    <small id="conceptFeatureKicker">
-                        MEMBER 01
-                    </small>
-
-                    <h3 id="conceptFeatureInfoTitle">
-                        EIRA
-                    </h3>
-
-                    <p id="conceptFeatureDescription">
-                        Residual Rose를 중심으로
-                        조용하지만 강한 존재감을 표현한
-                        EIRA의 공식 Concept Photo.
-                    </p>
-
-                </div>
-
-
-                <div class="echor7-feature__meta">
-
-                    <div>
-                        <span>IDENTITY</span>
-                        <strong id="conceptFeatureIdentity">QUIET PRESENCE</strong>
-                    </div>
-
-                    <div>
-                        <span>COLOR SIGNAL</span>
-                        <strong id="conceptFeatureColor">RESIDUAL ROSE</strong>
-                    </div>
-
-                    <div>
-                        <span>RELEASE TYPE</span>
-                        <strong id="conceptFeatureRelease">MEMBER VISUAL</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="echor7-feature__controls">
-
-                    <button
-                        type="button"
-                        id="conceptPrev"
-                        aria-label="Previous concept photo"
-                    >
-                        ← PREV
-                    </button>
-
-                    <button
-                        type="button"
-                        id="conceptNext"
-                        aria-label="Next concept photo"
-                    >
-                        NEXT →
-                    </button>
-
-                </div>
-
-            </aside>
-
-        </div>
-
-
-        <div class="echor7-strip">
-
-            <button
-                class="echor7-thumb is-active"
-                type="button"
-                data-concept-index="0"
-            >
-
-                <div class="echor7-thumb__media">
-                    <img
-                        src="assets/echor/EIRA/EIRA_UPPER_BODY_FINAL.png"
-                        alt="EIRA Concept Photo"
-                    >
-                    <div class="echor7-thumb__shade"></div>
-                </div>
-
-                <div class="echor7-thumb__copy">
-                    <span>01 / MEMBER</span>
-                    <strong>EIRA</strong>
-                    <small>RESIDUAL ROSE</small>
-                </div>
-
-            </button>
-
-
-            <button
-                class="echor7-thumb"
-                type="button"
-                data-concept-index="1"
-            >
-
-                <div class="echor7-thumb__media">
-                    <img
-                        src="assets/echor/NOVA/NOVA_UPPER_BODY_FINAL.png"
-                        alt="NOVA Concept Photo"
-                    >
-                    <div class="echor7-thumb__shade"></div>
-                </div>
-
-                <div class="echor7-thumb__copy">
-                    <span>02 / MEMBER</span>
-                    <strong>NOVA</strong>
-                    <small>ECHO BLUE</small>
-                </div>
-
-            </button>
-
-
-            <button
-                class="echor7-thumb"
-                type="button"
-                data-concept-index="2"
-            >
-
-                <div class="echor7-thumb__media">
-                    <img
-                        src="assets/echor/LYRA/LYRA_UPPER_BODY_FINAL.png"
-                        alt="LYRA Concept Photo"
-                    >
-                    <div class="echor7-thumb__shade"></div>
-                </div>
-
-                <div class="echor7-thumb__copy">
-                    <span>03 / MEMBER</span>
-                    <strong>LYRA</strong>
-                    <small>PALE GOLD</small>
-                </div>
-
-            </button>
-
-
-            <button
-                class="echor7-thumb"
-                type="button"
-                data-concept-index="3"
-            >
-
-                <div class="echor7-thumb__media">
-                    <img
-                        src="assets/echor/CYRA/CYRA_UPPER_BODY_FINAL.png"
-                        alt="CYRA Concept Photo"
-                    >
-                    <div class="echor7-thumb__shade"></div>
-                </div>
-
-                <div class="echor7-thumb__copy">
-                    <span>04 / MEMBER</span>
-                    <strong>CYRA</strong>
-                    <small>PRISM SILVER</small>
-                </div>
-
-            </button>
-
-
-            <button
-                class="echor7-thumb echor7-thumb--wide"
-                type="button"
-                data-concept-index="4"
-            >
-
-                <div class="echor7-thumb__media">
-                    <img
-                        src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png"
-                        alt="ECHØR Group Concept Photo"
-                    >
-                    <div class="echor7-thumb__shade"></div>
-                </div>
-
-                <div class="echor7-thumb__copy">
-                    <span>05 / GROUP</span>
-                    <strong>ECHØR</strong>
-                    <small>FINAL FREQUENCY</small>
-                </div>
-
-            </button>
-
-
-            <button
-                class="echor7-thumb echor7-thumb--wide"
-                type="button"
-                data-concept-index="5"
-            >
-
-                <div class="echor7-thumb__media">
-                    <img
-                        src="assets/echor/VIDEO/ECHOR_HERO_FILM_THUMBNAIL_FINAL_16x9.png"
-                        alt="ECHØR Motion Concept"
-                    >
-                    <div class="echor7-thumb__shade"></div>
-                </div>
-
-                <div class="echor7-thumb__copy">
-                    <span>06 / MOTION</span>
-                    <strong>PRISM Ø</strong>
-                    <small>HERO FILM</small>
-                </div>
-
-            </button>
-
-        </div>
-
-
-        <div class="echor7-ending">
-
-            <p>
-                MEMBER 01 → MEMBER 04 → GROUP → MOTION
-            </p>
-
-            <h3>
-                SIX VISUALS.
-                <br>
-
-                <span>
-                    ONE COMEBACK LANGUAGE.
-                </span>
-            </h3>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     11 / PRODUCTION PIPELINE
-========================================================= -->
-
-<section
-    class="echor8-pipeline"
-    id="productionPipeline"
->
-
-    <div
-        class="echor8-pipeline__glow
-               echor8-pipeline__glow--violet"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor8-pipeline__glow
-               echor8-pipeline__glow--cyan"
-        aria-hidden="true"
-    ></div>
-
-
-    <div class="echor-container">
-
-        <header class="echor8-header">
-
-            <div>
-
-                <p class="echor8-index">
-                    11 / PRODUCTION PIPELINE
-                </p>
-
-                <h2>
-                    GENERATE LESS.
-                    <br>
-
-                    <span>
-                        DECIDE MORE.
-                    </span>
-                </h2>
-
-            </div>
-
-
-            <div class="echor8-header__copy">
-
-                <strong>
-                    AI PRODUCTION SYSTEM
-                    <br>
-                    05 CONTROL STAGES
-                </strong>
-
-                <p>
-                    결과물을 무작정 반복 생성하지 않고,
-                    문제를 관찰하고 기준을 세운 뒤
-                    수정과 검증을 반복하는 제작 시스템으로
-                    ECHØR의 일관성을 통제했습니다.
-                </p>
-
-            </div>
-
-        </header>
-
-
-
-        <div class="echor8-system">
-
-
-            <nav
-                class="echor8-stage-list"
-                aria-label="ECHØR production pipeline stages"
-            >
-
-                <div class="echor8-stage-list__head">
-
-                    <span>
-                        CONTROL STAGES
-                    </span>
-
-                    <span>
-                        01 → 05
-                    </span>
-
-                </div>
-
-
-                <button
-                    class="echor8-stage is-active"
-                    type="button"
-                    data-pipeline-index="0"
-                >
-
-                    <span class="echor8-stage__number">
-                        01
-                    </span>
-
-                    <span class="echor8-stage__copy">
-
-                        <strong>
-                            DEFINE IDENTITY
-                        </strong>
-
-                        <small>
-                            CHARACTER SYSTEM
-                        </small>
-
-                    </span>
-
-                    <span class="echor8-stage__arrow">
-                        ↗
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="echor8-stage"
-                    type="button"
-                    data-pipeline-index="1"
-                >
-
-                    <span class="echor8-stage__number">
-                        02
-                    </span>
-
-                    <span class="echor8-stage__copy">
-
-                        <strong>
-                            LOCK REFERENCES
-                        </strong>
-
-                        <small>
-                            CONSISTENCY CONTROL
-                        </small>
-
-                    </span>
-
-                    <span class="echor8-stage__arrow">
-                        ↗
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="echor8-stage"
-                    type="button"
-                    data-pipeline-index="2"
-                >
-
-                    <span class="echor8-stage__number">
-                        03
-                    </span>
-
-                    <span class="echor8-stage__copy">
-
-                        <strong>
-                            BUILD GROUP
-                        </strong>
-
-                        <small>
-                            DUO → FOUR MEMBERS
-                        </small>
-
-                    </span>
-
-                    <span class="echor8-stage__arrow">
-                        ↗
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="echor8-stage"
-                    type="button"
-                    data-pipeline-index="3"
-                >
-
-                    <span class="echor8-stage__number">
-                        04
-                    </span>
-
-                    <span class="echor8-stage__copy">
-
-                        <strong>
-                            REFINE OUTPUT
-                        </strong>
-
-                        <small>
-                            COMPARE / VALIDATE
-                        </small>
-
-                    </span>
-
-                    <span class="echor8-stage__arrow">
-                        ↗
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="echor8-stage"
-                    type="button"
-                    data-pipeline-index="4"
-                >
-
-                    <span class="echor8-stage__number">
-                        05
-                    </span>
-
-                    <span class="echor8-stage__copy">
-
-                        <strong>
-                            EXPAND TO MOTION
-                        </strong>
-
-                        <small>
-                            STILL → HERO FILM
-                        </small>
-
-                    </span>
-
-                    <span class="echor8-stage__arrow">
-                        ↗
-                    </span>
-
-                </button>
-
-            </nav>
-
-
-
-            <article
-                class="echor8-decision"
-                aria-live="polite"
-            >
-
-                <div class="echor8-decision__top">
-
-                    <div>
-
-                        <span class="echor8-decision__dot"></span>
-
-                        <span>
-                            ACTIVE CONTROL
-                        </span>
-
-                    </div>
-
-                    <span id="pipelinePhase">
-                        PHASE 01
-                    </span>
-
-                </div>
-
-
-                <div class="echor8-decision__hero">
-
-                    <small>
-                        CURRENT DECISION
-                    </small>
-
-                    <h3 id="pipelineTitle">
-                        DEFINE
-                        <br>
-                        IDENTITY.
-                    </h3>
-
-                    <p id="pipelineSummary">
-                        생성 전에 각 멤버의 얼굴, 헤어,
-                        체형, 실루엣과 성격 키워드를 먼저 정의해
-                        이후 모든 결과물을 판단할 기준을 만들었습니다.
-                    </p>
-
-                </div>
-
-
-                <div class="echor8-evidence">
-
-                    <div class="echor8-evidence__item echor8-evidence__item--before">
-
-                        <span>
-                            BEFORE
-                        </span>
-
-                        <strong id="pipelineBefore">
-                            캐릭터마다 명확한
-                            비교 기준이 없는 상태
-                        </strong>
-
-                    </div>
-
-
-                    <div class="echor8-evidence__item echor8-evidence__item--decision">
-
-                        <span>
-                            DECISION
-                        </span>
-
-                        <strong id="pipelineDecision">
-                            얼굴·헤어·체형·실루엣을
-                            먼저 시스템으로 정의
-                        </strong>
-
-                    </div>
-
-
-                    <div class="echor8-evidence__item echor8-evidence__item--output">
-
-                        <span>
-                            OUTPUT
-                        </span>
-
-                        <strong id="pipelineOutput">
-                            04 MEMBER
-                            MASTER IDENTITIES
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="echor8-tool">
-
-                    <span>
-                        TOOL / PURPOSE
-                    </span>
-
-                    <strong id="pipelineTools">
-                        NANO BANANA
-                        <i>+</i>
-                        FIGMA
-                    </strong>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-
-        <section class="echor8-proof">
-
-            <div class="echor8-proof__heading">
-
-                <div>
-
-                    <span>
-                        VISUAL PROOF
-                    </span>
-
-                    <h3>
-                        DECISIONS,
-                        <br>
-                        NOT RANDOM GENERATIONS.
-                    </h3>
-
-                </div>
-
-
-                <p>
-                    같은 장면을 반복 생성하는 대신
-                    V01에서 발견한 문제를 기록하고,
-                    V02에서 기준을 수정한 뒤 FINAL에서
-                    일관성을 다시 확인했습니다.
-                </p>
-
-            </div>
-
-
-            <div class="echor8-proof__grid">
-
-
-                <figure class="echor8-proof-card">
-
-                    <div class="echor8-proof-card__media">
-
-                        <img
-                            src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_V01.png"
-                            alt="ECHØR V01 visual development"
-                        >
-
-                        <span>
-                            BEFORE
-                        </span>
-
-                    </div>
-
-                    <figcaption>
-
-                        <small>
-                            V01 / OBSERVE
-                        </small>
-
-                        <strong>
-                            FACE DRIFT
-                            <br>
-                            HEAVY WARDROBE
-                        </strong>
-
-                    </figcaption>
-
-                </figure>
-
-
-
-                <figure class="echor8-proof-card">
-
-                    <div class="echor8-proof-card__media">
-
-                        <img
-                            src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_V02.png"
-                            alt="ECHØR V02 visual development"
-                        >
-
-                        <span>
-                            DECISION
-                        </span>
-
-                    </div>
-
-                    <figcaption>
-
-                        <small>
-                            V02 / REFINE
-                        </small>
-
-                        <strong>
-                            FACE LOCK
-                            <br>
-                            MEMBER DISTINCTION
-                        </strong>
-
-                    </figcaption>
-
-                </figure>
-
-
-
-                <figure class="echor8-proof-card echor8-proof-card--final">
-
-                    <div class="echor8-proof-card__media">
-
-                        <img
-                            src="assets/echor/VISUAL_DEVELOPMENT/ECHOR_SCENE04_FINAL.png"
-                            alt="ECHØR Final visual development"
-                        >
-
-                        <span>
-                            OUTPUT
-                        </span>
-
-                    </div>
-
-                    <figcaption>
-
-                        <small>
-                            FINAL / VALIDATE
-                        </small>
-
-                        <strong>
-                            CONTROLLED IDENTITY
-                            <br>
-                            GROUP READABILITY
-                        </strong>
-
-                    </figcaption>
-
-                </figure>
-
-            </div>
-
-        </section>
-
-
-
-        <section class="echor8-control-log">
-
-            <div class="echor8-control-log__label">
-
-                <span>
-                    CONTROL LOG
-                </span>
-
-                <p>
-                    AI 결과를 채택하기 전
-                    아래 네 가지 기준을 반복 확인했습니다.
-                </p>
-
-            </div>
-
-
-            <div class="echor8-control-log__grid">
-
-                <div>
-                    <span>01</span>
-                    <strong>IDENTITY LOCK</strong>
-                    <p>얼굴과 헤어 기준 유지</p>
-                </div>
-
-                <div>
-                    <span>02</span>
-                    <strong>REFERENCE CHECK</strong>
-                    <p>정면·측면·전신 일치 확인</p>
-                </div>
-
-                <div>
-                    <span>03</span>
-                    <strong>GROUP BALANCE</strong>
-                    <p>개별성과 그룹 통일감 조정</p>
-                </div>
-
-                <div>
-                    <span>04</span>
-                    <strong>MOTION VALIDATION</strong>
-                    <p>영상에서도 캐릭터 정체성 유지</p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <section class="echor8-tools">
-
-            <div class="echor8-tools__label">
-
-                <span>
-                    TOOL CHAIN
-                </span>
-
-                <h3>
-                    EACH TOOL
-                    <br>
-                    HAS A ROLE.
-                </h3>
-
-            </div>
-
-
-            <div class="echor8-tools__grid">
-
-                <div>
-
-                    <span>
-                        01
-                    </span>
-
-                    <strong>
-                        NANO BANANA
-                    </strong>
-
-                    <p>
-                        Character Identity /
-                        Group Visual Generation
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        02
-                    </span>
-
-                    <strong>
-                        FIGMA
-                    </strong>
-
-                    <p>
-                        Reference Comparison /
-                        Visual Control
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        03
-                    </span>
-
-                    <strong>
-                        VEO
-                    </strong>
-
-                    <p>
-                        Identity Expansion /
-                        Motion Generation
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        04
-                    </span>
-
-                    <strong>
-                        PREMIERE PRO
-                    </strong>
-
-                    <p>
-                        Sequence Control /
-                        Final Edit
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <div class="echor8-insight">
-
-            <p>
-                PRODUCTION INSIGHT / ECHØR
-            </p>
-
-            <h3>
-                AI DOES NOT
-                <br>
-                MAKE THE DECISION.
-                <br>
-
-                <span>
-                    THE SYSTEM DOES.
-                </span>
-            </h3>
-
-
-            <div class="echor8-insight__footer">
-
-                <span>OBSERVE</span>
-                <i>→</i>
-
-                <span>COMPARE</span>
-                <i>→</i>
-
-                <span>DECIDE</span>
-                <i>→</i>
-
-                <span>REFINE</span>
-                <i>→</i>
-
-                <span>VALIDATE</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FINAL LAUNCH / CLOSING CTA — STEP 9
-========================================================= -->
-
-<section
-    class="echor-closing echor9-closing"
-    id="finalLaunch"
->
-
-
-    <!-- BACKGROUND -->
-
-    <div
-        class="echor9-closing__media"
-        aria-hidden="true"
-    >
-
-        <img
-            class="echor9-closing__image"
-            src="assets/echor/GROUP/ECHOR_GROUP_FINAL.png"
-            alt=""
-        >
-
-        <div class="echor9-closing__overlay"></div>
-
-    </div>
-
-
-
-    <!-- AMBIENT -->
-
-    <div
-        class="echor9-closing__glow echor9-closing__glow--pink"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor9-closing__glow echor9-closing__glow--cyan"
-        aria-hidden="true"
-    ></div>
-
-    <div
-        class="echor9-closing__grid"
-        aria-hidden="true"
-    ></div>
-
-
-
-    <!-- TOP HUD -->
-
-    <div class="echor9-closing__hud echor-container">
-
-        <span>
-            FINAL RELEASE / PRISM Ø
-        </span>
-
-        <div>
-
-            <i></i>
-
-            <span>
-                NOW LIVE
-            </span>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- MAIN CONTENT -->
-
-    <div class="echor9-closing__content echor-container">
-
-        <p class="echor9-closing__eyebrow">
-
-            ECHØR /
-            DIGITAL IDOL DEBUT EXPERIENCE
-
-        </p>
-
-
-        <div
-            class="echor9-closing__wordmark"
-            aria-label="ECHØR"
-        >
-            ECHØR
-        </div>
-
-
-        <h2>
-
-            THE SIGNAL
-
-            <span>
-                IS LIVE.
-            </span>
-
-        </h2>
-
-
-        <h3>
-            ONE SYSTEM.
-            FOUR RESONANCES.
-            ONE FINAL FREQUENCY.
-        </h3>
-
-
-        <p class="echor9-closing__description">
-            캐릭터 설계에서 그룹 아이덴티티,
-            Concept Release와 40초 Hero Film까지.
-            <br>
-            하나의 시각 언어로 연결한 ECHØR의
-            최종 AI Character Case Study.
-        </p>
-
-
-
-        <!-- CTA -->
-
-        <div class="echor9-closing__actions">
-
-            <a
-                class="echor9-btn echor9-btn--primary"
-                href="#heroFilm"
-            >
-                REPLAY HERO FILM
-                <span>↗</span>
-            </a>
-
-
-            <a
-                class="echor9-btn echor9-btn--secondary"
-                href="index.html#projects"
-            >
-                BACK TO PROJECTS
-                <span>↗</span>
-            </a>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- PROJECT DATA -->
-
-    <div class="echor9-closing__stats echor-container">
-
-        <div>
-
-            <strong
-                class="echor9-stat-number"
-                data-echor9-count="4"
-                data-echor9-pad="2"
-            >
-                04
-            </strong>
-
-            <span>
-                MEMBERS
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong
-                class="echor9-stat-number"
-                data-echor9-count="1"
-                data-echor9-pad="2"
-            >
-                01
-            </strong>
-
-            <span>
-                IDENTITY SYSTEM
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong
-                class="echor9-stat-number"
-                data-echor9-count="5"
-                data-echor9-pad="2"
-            >
-                05
-            </strong>
-
-            <span>
-                FILM SCENES
-            </span>
-
-        </div>
-
-
-        <div>
-
-            <strong
-                class="echor9-stat-number"
-                data-echor9-count="40"
-                data-echor9-suffix=" SEC"
-            >
-                40 SEC
-            </strong>
-
-            <span>
-                HERO FILM
-            </span>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- MEMBER SIGNAL -->
-
-    <div class="echor9-closing__members echor-container">
-
-        <div>
-            <span>01</span>
-            <strong>EIRA</strong>
-            <small>RESIDUAL ROSE</small>
-        </div>
-
-        <div>
-            <span>02</span>
-            <strong>NOVA</strong>
-            <small>ECHO BLUE</small>
-        </div>
-
-        <div>
-            <span>03</span>
-            <strong>LYRA</strong>
-            <small>PALE GOLD</small>
-        </div>
-
-        <div>
-            <span>04</span>
-            <strong>CYRA</strong>
-            <small>PRISM SILVER</small>
-        </div>
-
-    </div>
-
-
-
-    <!-- END TICKER -->
-
-    <div
-        class="echor9-ticker"
-        aria-hidden="true"
-    >
-
-        <div class="echor9-ticker__track">
-
-            <span>ECHØR</span>
-            <i>✦</i>
-
-            <span>PRISM Ø</span>
-            <i>✦</i>
-
-            <span>FINAL FREQUENCY</span>
-            <i>✦</i>
-
-            <span>NOW LIVE</span>
-            <i>✦</i>
-
-            <span>ECHØR</span>
-            <i>✦</i>
-
-            <span>PRISM Ø</span>
-            <i>✦</i>
-
-            <span>FINAL FREQUENCY</span>
-            <i>✦</i>
-
-            <span>NOW LIVE</span>
-            <i>✦</i>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-</main>
-
-
-<script src="js/echor.js"></script>
-
+      </div>
+      <div class="closing-footer"><span>ECHØR / PRISM Ø</span><span>AI CHARACTER IDENTITY SYSTEM</span><span id="currentYear"></span></div>
+    </section>
+  </main>
+
+  <!-- MEMBER MODAL -->
+  <div class="modal" id="memberModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalMemberName">
+      <button class="modal-close" type="button" aria-label="Close" data-close-modal>×</button>
+      <div class="modal-head"><span id="modalMemberIndex">MEMBER 01</span><h2 id="modalMemberName">EIRA</h2><p id="modalMemberPhrase">QUIET PRESENCE</p></div>
+
+      <figure class="modal-sheet">
+        <img id="modalSheetImage" src="assets/echor/EIRA/EIRA_CHARACTER_SHEET_FINAL.png" alt="EIRA character identity sheet" />
+        <figcaption>
+          <span>CHARACTER SHEET / MASTER IDENTITY ARCHIVE</span>
+          <b>ONE FACE → MULTIPLE ANGLES → CONTROLLED VARIATION</b>
+        </figcaption>
+      </figure>
+
+      <div class="modal-gallery" id="modalGallery"></div>
+      <div class="modal-info">
+        <div><span>HEIGHT</span><b id="modalHeight">168 CM</b></div>
+        <div><span>BODY SYSTEM</span><b id="modalBody">SLENDER ATHLETIC</b></div>
+        <div><span>PROPORTION</span><b id="modalProportion">7.5–8 HEAD</b></div>
+        <div><span>ACCENT</span><b id="modalAccent">RESIDUAL ROSE</b></div>
+      </div>
+      <div class="modal-rule"><span>CONSISTENCY CHECK</span><strong>FRONT → 3/4 → PROFILE → UPPER → FULL BODY</strong><p>Identity before variation. Human presence before perfection.</p></div>
+    </section>
+  </div>
+
+  <!-- GALLERY LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close-lightbox></div>
+    <figure class="lightbox-dialog">
+      <button class="lightbox-close" type="button" aria-label="Close" data-close-lightbox>×</button>
+      <img id="lightboxImage" src="" alt="" />
+      <figcaption id="lightboxTitle"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/echor.js"></script>
 </body>
-
 </html>
