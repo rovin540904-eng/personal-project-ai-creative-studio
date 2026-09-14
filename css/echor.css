@@ -1429,3 +1429,423 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+/* =========================================================
+   ECHØR / BRIGHT MOTION HERO — FINAL
+   Background motion:
+   assets/echor/VIDEO/ECHOR_HERO_PRISM_BRIGHT_BG_V01_8S_16x9.mp4
+
+   Foreground identity visual:
+   assets/echor/GROUP/ECHOR_GROUP_FINAL.png
+
+   The original layout below this hero remains unchanged.
+   ========================================================= */
+
+/* Desktop / tablet hero */
+.hero {
+  background: #e9eef2;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 30%, rgba(255,255,255,.98), rgba(226,234,241,.92) 42%, rgba(215,224,234,.96) 100%);
+}
+
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  filter: brightness(1.05) saturate(.94) contrast(.98);
+  transform: scale(1.018);
+}
+
+/*
+  The group source is an upper-body 16:9 visual, not a full-body cutout.
+  Keep its native framing and treat it as a large editorial identity plate.
+*/
+.hero-group-visual {
+  position: absolute;
+  z-index: 2;
+  top: clamp(105px, 12vh, 145px);
+  right: clamp(-78px, -2.4vw, -30px);
+  width: min(59vw, 1080px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.32);
+  box-shadow:
+    0 34px 90px rgba(15, 26, 42, .20),
+    0 0 70px rgba(151, 108, 255, .08);
+  opacity: .97;
+  transform: translate3d(0,0,0);
+  animation: echorGroupFloat 10s ease-in-out infinite alternate;
+}
+
+.hero-group-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(1.035) saturate(.93) contrast(1.015);
+  transform: scale(1.012);
+  animation: none;
+}
+
+/* Soft edge treatment keeps the editorial plate integrated with the motion field. */
+.hero-group-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(230,236,242,.22) 0%, transparent 13%),
+    linear-gradient(0deg, rgba(8,10,17,.10) 0%, transparent 25%);
+}
+
+/*
+  Preserve the existing white typography, but darken only the text side.
+  The right side stays luminous so the group visual reads bright and idol-like.
+*/
+.hero-scrim {
+  z-index: -4;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 7, 14, .92) 0%,
+      rgba(5, 7, 14, .84) 28%,
+      rgba(5, 7, 14, .54) 46%,
+      rgba(5, 7, 14, .14) 64%,
+      rgba(5, 7, 14, .03) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(4, 5, 10, .90) 0%,
+      rgba(4, 5, 10, .43) 20%,
+      transparent 44%,
+      rgba(4, 5, 10, .12) 100%
+    );
+}
+
+.hero-prism {
+  z-index: -3;
+  opacity: .18;
+  filter: blur(72px);
+}
+.hero-prism-a {
+  left: -18vw;
+  top: 28%;
+  background: rgba(255, 82, 181, .68);
+}
+.hero-prism-b {
+  right: -16vw;
+  top: 15%;
+  background: rgba(91, 226, 255, .60);
+}
+
+.hero-hud span {
+  padding: 7px 9px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(5,7,14,.28);
+  box-shadow: 0 8px 28px rgba(0,0,0,.08);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 4;
+  max-width: min(920px, 56vw);
+}
+
+.hero-desc {
+  color: rgba(255,255,255,.79);
+  text-shadow: 0 2px 18px rgba(0,0,0,.24);
+}
+
+.hero-stats,
+.hero-signature,
+.hero-traits,
+.scroll-cue {
+  z-index: 4;
+}
+
+.hero-stats {
+  position: relative;
+  max-width: 760px;
+}
+
+@keyframes echorGroupFloat {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-6px, -8px, 0);
+  }
+}
+
+/* When video cannot load, the established group visual still carries the hero. */
+.hero.hero-video-fallback .hero-bg-video {
+  opacity: 0;
+}
+
+.hero.hero-video-fallback .hero-group-visual {
+  width: min(66vw, 1160px);
+  opacity: 1;
+}
+
+/* Respect reduced-motion preferences without changing the composition. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-group-visual {
+    animation: none;
+  }
+
+  .hero-bg-video {
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   Keep the already-approved mobile structure:
+   visual first -> typography below.
+   Motion remains visible behind the 4-member upper-body plate.
+   --------------------------------------------------------- */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 850px;
+    justify-content: flex-start;
+    padding:
+      364px
+      max(18px, env(safe-area-inset-right))
+      52px
+      max(18px, env(safe-area-inset-left));
+    background: #05060b;
+  }
+
+  .hero-media {
+    top: 62px;
+    bottom: auto;
+    height: 330px;
+    background: #e8edf1;
+  }
+
+  .hero-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: brightness(1.08) saturate(.92) contrast(.98);
+    transform: scale(1.025);
+  }
+
+  .hero-group-visual {
+    top: 27px;
+    right: 3%;
+    width: 94%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    border-color: rgba(255,255,255,.42);
+    box-shadow:
+      0 18px 46px rgba(17, 28, 43, .22),
+      0 0 34px rgba(141, 106, 255, .08);
+    opacity: .96;
+    animation: none;
+  }
+
+  .hero-group-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 29%;
+    filter: brightness(1.04) saturate(.94) contrast(1.01);
+    transform: none;
+  }
+
+  .hero-scrim {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4,5,10,.02) 0%,
+        rgba(4,5,10,.04) 28%,
+        rgba(4,5,10,.58) 42%,
+        rgba(4,5,10,.96) 49%,
+        #04050a 68%
+      );
+  }
+
+  .hero-prism {
+    opacity: .14;
+  }
+
+  .hero-hud {
+    top: 75px;
+    z-index: 5;
+  }
+
+  .hero-hud span {
+    padding: 5px 6px;
+    background: rgba(5,7,14,.34);
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero.hero-video-fallback .hero-group-visual {
+    width: 94%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 840px;
+    padding-top: 350px;
+  }
+
+  .hero-media {
+    height: 316px;
+  }
+
+  .hero-group-visual {
+    top: 29px;
+    right: 2.5%;
+    width: 95%;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding-top: 332px;
+  }
+
+  .hero-media {
+    height: 298px;
+  }
+
+  .hero-group-visual {
+    top: 28px;
+  }
+}
+
+/* =========================================================
+   ECHØR / BRIGHT MOTION HERO — FINAL MICRO TUNING V2
+   Review target:
+   - slightly brighter motion background
+   - brighter group portrait without losing skin detail
+   - cleaner desktop placement
+   - stronger small-copy readability
+   - mobile composition kept almost unchanged
+   ========================================================= */
+
+/* 1) BACKGROUND VIDEO — brighten the luminous stage, especially on the right */
+.hero-bg-video {
+  filter: brightness(1.12) saturate(.98) contrast(.97);
+}
+
+/* 2) GROUP VISUAL — slightly larger/brighter, still an upper-body editorial plate */
+.hero-group-visual {
+  top: clamp(96px, 10.8vh, 126px);
+  right: clamp(-52px, -1.8vw, -26px);
+  width: min(60.5vw, 1100px);
+  opacity: 1;
+  box-shadow:
+    0 30px 82px rgba(15, 26, 42, .16),
+    0 0 78px rgba(151, 108, 255, .07);
+}
+
+.hero-group-visual img {
+  object-position: center 29%;
+  filter: brightness(1.075) saturate(.97) contrast(1.005);
+}
+
+/* 3) SCRIM — keep the copy side premium-black while allowing more bright motion through */
+.hero-scrim {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 7, 14, .94) 0%,
+      rgba(5, 7, 14, .87) 26%,
+      rgba(5, 7, 14, .57) 44%,
+      rgba(5, 7, 14, .10) 65%,
+      rgba(5, 7, 14, .01) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(4, 5, 10, .87) 0%,
+      rgba(4, 5, 10, .37) 20%,
+      transparent 45%,
+      rgba(4, 5, 10, .08) 100%
+    );
+}
+
+/* 4) TEXT CONTRAST — only the smaller supporting copy needed a small lift */
+.hero-desc {
+  color: rgba(255,255,255,.88);
+  text-shadow:
+    0 2px 18px rgba(0,0,0,.36),
+    0 0 1px rgba(255,255,255,.16);
+}
+
+.hero-kicker,
+.hero-stats span,
+.hero-signature,
+.hero-traits,
+.scroll-cue {
+  text-shadow: 0 2px 12px rgba(0,0,0,.34);
+}
+
+/* Desktop: preserve a comfortable gap between copy and portrait */
+@media (min-width: 1180px) {
+  .hero-copy {
+    max-width: min(900px, 52vw);
+  }
+}
+
+/* MOBILE — keep approved scale/flow, add only brightness/readability tuning */
+@media (max-width: 760px) {
+  .hero-bg-video {
+    filter: brightness(1.12) saturate(.97) contrast(.97);
+  }
+
+  .hero-group-visual {
+    top: 28px;
+    right: 3%;
+    width: 94%;
+    opacity: 1;
+    box-shadow:
+      0 16px 38px rgba(17, 28, 43, .18),
+      0 0 28px rgba(141, 106, 255, .06);
+  }
+
+  .hero-group-visual img {
+    object-position: center 28.5%;
+    filter: brightness(1.07) saturate(.97) contrast(1.005);
+  }
+
+  .hero-scrim {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4,5,10,.00) 0%,
+        rgba(4,5,10,.02) 29%,
+        rgba(4,5,10,.49) 41%,
+        rgba(4,5,10,.95) 49%,
+        #04050a 67%
+      );
+  }
+
+  .hero-desc {
+    color: rgba(255,255,255,.90);
+  }
+}
+

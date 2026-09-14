@@ -29,6 +29,63 @@
     });
   });
 
+
+  // Bright Motion Hero background
+  const heroSection = $("#hero");
+  const heroBackgroundVideo = $("#heroBackgroundVideo");
+
+  if (heroSection && heroBackgroundVideo) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const showVideoFallback = () => {
+      heroSection.classList.add("hero-video-fallback");
+    };
+
+    const tryPlayHero = async () => {
+      if (reducedMotion || document.hidden) return;
+      try {
+        heroBackgroundVideo.muted = true;
+        await heroBackgroundVideo.play();
+        heroSection.classList.remove("hero-video-fallback");
+      } catch (error) {
+        // The upper-body group visual remains visible as the graceful fallback.
+        console.warn("ECHØR hero background autoplay is unavailable.", error);
+      }
+    };
+
+    heroBackgroundVideo.addEventListener("loadeddata", tryPlayHero, { once: true });
+    heroBackgroundVideo.addEventListener("canplay", tryPlayHero, { once: true });
+    heroBackgroundVideo.addEventListener("error", showVideoFallback);
+
+    if (reducedMotion) {
+      heroBackgroundVideo.pause();
+    } else if ("IntersectionObserver" in window) {
+      const heroVideoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.08) {
+            tryPlayHero();
+          } else {
+            heroBackgroundVideo.pause();
+          }
+        });
+      }, { threshold: [0, 0.08, 0.25] });
+
+      heroVideoObserver.observe(heroSection);
+    } else {
+      tryPlayHero();
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        heroBackgroundVideo.pause();
+      } else {
+        const rect = heroSection.getBoundingClientRect();
+        const visible = rect.bottom > 0 && rect.top < window.innerHeight;
+        if (visible) tryPlayHero();
+      }
+    });
+  }
+
   // Reveal observer
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
