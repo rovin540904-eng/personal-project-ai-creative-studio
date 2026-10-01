@@ -1,0 +1,1101 @@
+/* =========================================================
+   SEOUL 2049 — MOTIONARY PROJECT PAGE
+   File: css/seoul2049.css
+========================================================= */
+
+
+/* =========================================================
+   01. ROOT / COLOR SYSTEM
+========================================================= */
+
+.seoul2049-page {
+    --bg: #f5f5f2;
+    --bg-soft: #ececea;
+
+    --text: #17191c;
+    --text-sub: #6f747a;
+    --text-soft: #969a9f;
+
+    --line: #d8dadc;
+
+    --white: #ffffff;
+
+    --max-width: 1200px;
+
+    --section-space: 140px;
+    --grid-gap: 36px;
+
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        Pretendard,
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    line-height: 1.7;
+    word-break: keep-all;
+}
+
+
+/* =========================================================
+   02. GLOBAL RESET
+========================================================= */
+
+.seoul2049-page *,
+.seoul2049-page *::before,
+.seoul2049-page *::after {
+    box-sizing: border-box;
+}
+
+.seoul2049-page img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.seoul2049-page figure {
+    margin: 0;
+}
+
+.seoul2049-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.seoul2049-page p {
+    margin-top: 0;
+}
+
+.seoul2049-page h1,
+.seoul2049-page h2,
+.seoul2049-page h3 {
+    margin-top: 0;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   03. CONTAINER
+========================================================= */
+
+.seoul2049-page .container {
+    width: calc(100% - 48px);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   04. TOP NAV
+========================================================= */
+
+.project-nav {
+    width: calc(100% - 48px);
+    max-width: var(--max-width);
+    height: 86px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.project-nav__brand {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.project-nav__back {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--text-sub);
+
+    transition: opacity 0.25s ease;
+}
+
+.project-nav__back:hover {
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   05. COMMON TYPOGRAPHY
+========================================================= */
+
+.eyebrow,
+.section-number {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: var(--text-sub);
+}
+
+.project-section h2 {
+    margin-bottom: 42px;
+
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1.15;
+
+    letter-spacing: -0.035em;
+}
+
+.project-section h3 {
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.section-number {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    width: 100%;
+    max-width: 720px;
+
+    margin-bottom: 56px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: var(--text-sub);
+}
+
+.section-copy {
+    max-width: 720px;
+    margin-bottom: 56px;
+}
+
+.section-copy p {
+    color: var(--text-sub);
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   06. HERO
+========================================================= */
+
+.project-hero {
+    padding: 92px 0 140px;
+}
+
+.project-hero__text {
+    max-width: 770px;
+    margin-bottom: 52px;
+}
+
+.project-hero h1 {
+    margin-bottom: 28px;
+
+    font-size: clamp(58px, 8vw, 96px);
+    line-height: 0.95;
+
+    font-weight: 500;
+    letter-spacing: -0.055em;
+}
+
+.project-hero__description {
+    max-width: 700px;
+
+    margin-bottom: 24px;
+
+    font-size: 19px;
+    line-height: 1.85;
+
+    color: #44484d;
+}
+
+.project-hero__roles {
+    margin-bottom: 34px;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    letter-spacing: 0.06em;
+    color: var(--text-sub);
+}
+
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+    height: 48px;
+
+    padding: 0 24px;
+
+    border: 1px solid var(--text);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.project-button:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.project-hero__image {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #ddd;
+}
+
+.project-hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   07. COMMON SECTION
+========================================================= */
+
+.project-section {
+    padding: var(--section-space) 0;
+
+    border-top: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   08. PROJECT OVERVIEW
+========================================================= */
+
+.overview-info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 24px;
+
+    padding: 30px 0;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    margin-bottom: 64px;
+}
+
+.overview-info__item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.overview-info__item span {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-soft);
+}
+
+.overview-info__item strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.overview-text {
+    max-width: 720px;
+    margin-bottom: 64px;
+}
+
+.overview-text h3 {
+    margin-bottom: 18px;
+}
+
+.overview-text p {
+    color: var(--text-sub);
+}
+
+.overview-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: var(--grid-gap);
+}
+
+.overview-gallery figure img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.overview-gallery figcaption {
+    margin-top: 14px;
+
+    font-size: 11px;
+    letter-spacing: 0.14em;
+
+    color: var(--text-sub);
+}
+
+
+/* =========================================================
+   09. FINAL FILM
+========================================================= */
+
+.final-film {
+    text-align: center;
+}
+
+.final-film h2,
+.final-film .section-number,
+.final-film .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.film-frame {
+    width: 92%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    aspect-ratio: 16 / 9;
+
+    background: #111;
+}
+
+.film-frame iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+.film-meta {
+    margin-top: 18px;
+
+    font-size: 12px;
+    letter-spacing: 0.12em;
+
+    color: var(--text-sub);
+}
+
+
+/* =========================================================
+   10. CONCEPT & STORY
+========================================================= */
+
+.concept-question {
+    max-width: 900px;
+
+    margin: 0 0 52px 0;
+
+    padding: 0;
+
+    border: 0;
+
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.08;
+
+    font-weight: 500;
+    letter-spacing: -0.045em;
+}
+
+.concept-copy {
+    max-width: 700px;
+    margin-bottom: 72px;
+}
+
+.concept-copy p {
+    margin-bottom: 18px;
+
+    font-size: 17px;
+    color: var(--text-sub);
+}
+
+.concept-images {
+    display: grid;
+    grid-template-columns: 0.65fr 1fr;
+
+    align-items: end;
+    gap: var(--grid-gap);
+
+    margin-bottom: 72px;
+}
+
+.concept-images img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.concept-images figcaption {
+    margin-top: 14px;
+
+    font-size: 11px;
+    letter-spacing: 0.12em;
+
+    color: var(--text-sub);
+}
+
+.visual-motif {
+    max-width: 650px;
+
+    padding-top: 34px;
+
+    border-top: 1px solid var(--line);
+}
+
+.visual-motif h3 {
+    font-size: 28px;
+}
+
+.visual-motif p:last-child {
+    color: var(--text-sub);
+}
+
+
+/* =========================================================
+   11. CHARACTER SYSTEM
+========================================================= */
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 40px;
+
+    margin-bottom: 80px;
+}
+
+.character-grid figure {
+    min-width: 0;
+}
+
+.character-grid img {
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    background: #e5e5e3;
+}
+
+.character-grid figcaption {
+    margin-top: 15px;
+
+    font-size: 11px;
+    letter-spacing: 0.15em;
+
+    color: var(--text-sub);
+}
+
+.visual-system-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+}
+
+.visual-system-grid article {
+    padding-top: 28px;
+
+    border-top: 1px solid var(--line);
+}
+
+.visual-system-grid span {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+
+    color: var(--text-soft);
+}
+
+.visual-system-grid h3 {
+    margin: 14px 0;
+
+    font-size: 19px;
+}
+
+.visual-system-grid p {
+    color: var(--text-sub);
+}
+
+
+/* =========================================================
+   12. KEY SCENES
+========================================================= */
+
+.key-scenes__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: var(--grid-gap);
+
+    margin-bottom: 56px;
+}
+
+.key-scenes__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: var(--grid-gap);
+}
+
+.scene-card img {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+    margin-bottom: 20px;
+}
+
+.scene-card span {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+
+    color: var(--text-soft);
+}
+
+.scene-card h3 {
+    margin: 8px 0 12px;
+}
+
+.scene-card p {
+    margin: 0;
+
+    color: var(--text-sub);
+    font-size: 14px;
+}
+
+.scene-card--hero img {
+    box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   13. AI WORKFLOW
+========================================================= */
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: var(--grid-gap);
+}
+
+.workflow-grid article {
+    min-width: 0;
+}
+
+.workflow-grid article > span {
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 11px;
+    letter-spacing: 0.14em;
+
+    color: var(--text-soft);
+}
+
+.workflow-grid img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    margin-bottom: 20px;
+
+    background: #e2e2df;
+}
+
+.workflow-grid h3 {
+    margin-bottom: 10px;
+}
+
+.workflow-grid p {
+    font-size: 14px;
+    color: var(--text-sub);
+}
+
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 64px 0;
+}
+
+.tool-tags span {
+    padding: 9px 14px;
+
+    border: 1px solid var(--line);
+    border-radius: 999px;
+
+    font-size: 11px;
+    letter-spacing: 0.08em;
+
+    color: var(--text-sub);
+}
+
+.workflow-note {
+    max-width: 720px;
+
+    padding-top: 34px;
+
+    border-top: 1px solid var(--line);
+}
+
+.workflow-note h3 {
+    margin-bottom: 14px;
+}
+
+.workflow-note p {
+    color: var(--text-sub);
+}
+
+
+/* =========================================================
+   14. EDITING & SOUND
+========================================================= */
+
+.editing-layout {
+    display: grid;
+    grid-template-columns: 1.53fr 1fr;
+
+    align-items: start;
+    gap: var(--grid-gap);
+
+    margin-bottom: 78px;
+}
+
+.editing-layout img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.editing-layout figcaption {
+    margin-top: 14px;
+
+    font-size: 11px;
+    letter-spacing: 0.13em;
+
+    color: var(--text-sub);
+}
+
+.sound-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    margin-bottom: 120px;
+}
+
+.sound-info article {
+    padding-top: 28px;
+
+    border-top: 1px solid var(--line);
+}
+
+.sound-info span {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+
+    color: var(--text-soft);
+}
+
+.sound-info h3 {
+    margin: 10px 0 12px;
+}
+
+.sound-info p {
+    color: var(--text-sub);
+}
+
+
+/* =========================================================
+   15. FINAL RESULT
+========================================================= */
+
+.final-result {
+    padding-top: 60px;
+
+    border-top: 1px solid var(--line);
+}
+
+.final-result > h2 {
+    margin-bottom: 22px;
+
+    font-size: clamp(48px, 7vw, 80px);
+    letter-spacing: -0.05em;
+}
+
+.final-result > p:not(.eyebrow) {
+    max-width: 690px;
+
+    margin-bottom: 36px;
+
+    color: var(--text-sub);
+}
+
+.final-spec {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 24px;
+
+    margin-bottom: 56px;
+}
+
+.final-spec span {
+    padding-right: 24px;
+
+    border-right: 1px solid var(--line);
+
+    font-size: 12px;
+    letter-spacing: 0.1em;
+
+    color: var(--text-sub);
+}
+
+.final-spec span:last-child {
+    border-right: 0;
+}
+
+.final-result__image {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   16. FOOTER
+========================================================= */
+
+.project-footer {
+    padding: 52px 0 76px;
+
+    border-top: 1px solid var(--line);
+}
+
+.project-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.project-footer p,
+.project-footer a {
+    margin: 0;
+
+    font-size: 11px;
+    letter-spacing: 0.12em;
+
+    color: var(--text-sub);
+}
+
+.project-footer a {
+    transition: opacity 0.25s ease;
+}
+
+.project-footer a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   17. SUBTLE IMAGE MOTION
+========================================================= */
+
+.project-hero__image,
+.overview-gallery figure,
+.concept-images figure,
+.character-grid figure,
+.scene-card,
+.workflow-grid article,
+.editing-layout figure {
+    overflow: hidden;
+}
+
+.project-hero__image img,
+.overview-gallery img,
+.concept-images img,
+.character-grid img,
+.scene-card img,
+.workflow-grid img,
+.editing-layout img {
+    transition:
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.4s ease;
+}
+
+.project-hero__image:hover img,
+.overview-gallery figure:hover img,
+.concept-images figure:hover img,
+.scene-card:hover img,
+.workflow-grid article:hover img,
+.editing-layout figure:hover img {
+    transform: scale(1.015);
+}
+
+
+/* =========================================================
+   18. TABLET
+========================================================= */
+
+@media (max-width: 960px) {
+
+    .seoul2049-page {
+        --section-space: 110px;
+        --grid-gap: 24px;
+    }
+
+    .overview-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .overview-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .overview-gallery figure:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .concept-images {
+        grid-template-columns: 1fr;
+    }
+
+    .concept-images__present,
+    .concept-images__memory {
+        width: 100%;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .key-scenes__top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .key-scenes__top .scene-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .workflow-grid img {
+        max-width: 720px;
+    }
+
+    .editing-layout {
+        grid-template-columns: 1fr;
+        gap: 52px;
+    }
+}
+
+
+/* =========================================================
+   19. MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .seoul2049-page {
+        --section-space: 88px;
+    }
+
+    .seoul2049-page .container {
+        width: calc(100% - 36px);
+    }
+
+    .project-nav {
+        width: calc(100% - 36px);
+        height: 72px;
+    }
+
+    .project-nav__brand {
+        font-size: 13px;
+    }
+
+    .project-nav__back {
+        font-size: 10px;
+    }
+
+    .project-hero {
+        padding: 72px 0 96px;
+    }
+
+    .project-hero__text {
+        margin-bottom: 38px;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(50px, 17vw, 72px);
+    }
+
+    .project-hero__description {
+        font-size: 16px;
+    }
+
+    .project-hero__roles {
+        font-size: 11px;
+    }
+
+    .project-section h2 {
+        margin-bottom: 32px;
+
+        font-size: 26px;
+    }
+
+    .section-intro {
+        margin-bottom: 42px;
+
+        font-size: 16px;
+    }
+
+    .overview-info {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 28px 18px;
+    }
+
+    .overview-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-gallery figure:last-child {
+        grid-column: auto;
+    }
+
+    .concept-question {
+        margin-bottom: 38px;
+
+        font-size: 34px;
+    }
+
+    .concept-copy p {
+        font-size: 15px;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 22px 16px;
+    }
+
+    .character-grid figcaption {
+        font-size: 10px;
+    }
+
+    .visual-system-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .key-scenes__top,
+    .key-scenes__bottom {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .key-scenes__top .scene-card:last-child {
+        grid-column: auto;
+    }
+
+    .scene-card p {
+        font-size: 13px;
+    }
+
+    .sound-info {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        margin-bottom: 90px;
+    }
+
+    .final-result {
+        padding-top: 48px;
+    }
+
+    .final-result > h2 {
+        font-size: 48px;
+    }
+
+    .final-spec {
+        gap: 12px 18px;
+    }
+
+    .final-spec span {
+        padding-right: 18px;
+
+        font-size: 10px;
+    }
+
+    .film-frame {
+        width: 100%;
+    }
+
+    .project-footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   20. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .overview-info {
+        grid-template-columns: 1fr;
+    }
+
+    .character-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .concept-question {
+        font-size: 30px;
+    }
+
+    .project-button {
+        width: 100%;
+    }
+}
