@@ -1,0 +1,103 @@
+/* =========================================================
+   MOTIONARY / SELECTED WORK 04 / ECHØR BRIGHT VISUAL
+   Existing ECHØR assets only.
+   ========================================================= */
+
+.echor-work-showcase-bright {
+    background: linear-gradient(
+        135deg,
+        #f2f5f7 0%,
+        #e9edf2 50%,
+        #f7f2f8 100%
+    );
+}
+
+.echor-work-showcase-bright .echor-work-main,
+.echor-work-showcase-bright .work-side figure {
+    background: #eef2f5;
+}
+
+.echor-work-showcase-bright .echor-work-main > img,
+.echor-work-showcase-bright .work-side img {
+    filter: brightness(1.045) saturate(1.035) contrast(1.015);
+}
+
+.echor-work-showcase-bright .echor-work-main > img {
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.echor-work-showcase-bright .work-media-overlay {
+    background:
+        linear-gradient(0deg, rgba(12, 14, 22, .24), transparent 43%),
+        linear-gradient(90deg, rgba(255, 255, 255, .08), transparent 45%);
+}
+
+.echor-work-showcase-bright .work-play {
+    background: rgba(255, 255, 255, .88);
+    color: #11131a;
+    border: 1px solid rgba(255, 255, 255, .72);
+    box-shadow:
+        0 14px 38px rgba(30, 42, 60, .16),
+        0 0 34px rgba(174, 130, 255, .12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.echor-work-showcase-bright .echor-work-main:hover .work-play {
+    background: #ffffff;
+    color: #11131a;
+}
+
+.echor-work-showcase-bright .echor-work-main > span:not(.work-play) {
+    padding: 7px 9px;
+    background: rgba(255, 255, 255, .80);
+    color: #11131a;
+    border: 1px solid rgba(255, 255, 255, .74);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.echor-work-showcase-bright .work-side figure {
+    box-shadow: inset 0 0 0 1px rgba(20, 25, 34, .05);
+}
+
+.echor-work-showcase-bright .work-side img {
+    object-fit: cover;
+    object-position: center center;
+}
+
+.echor-work-showcase-bright .work-side figure:first-child img,
+.echor-work-showcase-bright .work-side figure:nth-child(2) img {
+    object-position: center 42%;
+}
+
+.echor-work-showcase-bright .work-side figure:last-child img {
+    object-fit: cover;
+    object-position: center 34%;
+    background: #eef2f5;
+}
+
+.echor-work-showcase-bright .work-side figcaption {
+    background: rgba(255, 255, 255, .84);
+    color: #10131a;
+    border: 1px solid rgba(255, 255, 255, .70);
+    box-shadow: 0 8px 24px rgba(28, 36, 50, .10);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+.echor-work-showcase-bright .work-main::after,
+.echor-work-showcase-bright .work-side figure::after {
+    border-color: rgba(255, 255, 255, .28);
+}
+
+@media (max-width: 640px) {
+    .echor-work-showcase-bright .echor-work-main > img {
+        object-position: center 28%;
+    }
+
+    .echor-work-showcase-bright .work-side figure:last-child img {
+        object-position: center 30%;
+    }
+}
