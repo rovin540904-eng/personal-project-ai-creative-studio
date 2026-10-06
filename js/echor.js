@@ -159,8 +159,8 @@
       proportion: "7.5–8 HEAD",
       accent: "RESIDUAL ROSE",
       dir: "EIRA",
-      sheet: "EIRA_CHARACTER_SHEET_FINAL.png",
-      files: ["EIRA_FRONT_FINAL.png", "EIRA_RIGHT_3Q_FINAL.png", "EIRA_RIGHT_PROFILE_FINAL.png", "EIRA_UPPER_BODY_FINAL.png", "EIRA_FULL_BODY_FINAL.png"]
+      sheet: "EIRA_CHARACTER_SHEET_FINAL.webp",
+      files: ["EIRA_FRONT_FINAL.webp", "EIRA_RIGHT_3Q_FINAL.webp", "EIRA_RIGHT_PROFILE_FINAL.webp", "EIRA_UPPER_BODY_FINAL.webp", "EIRA_FULL_BODY_FINAL.webp"]
     },
     nova: {
       index: "MEMBER 02",
@@ -171,8 +171,8 @@
       proportion: "7.5–8 HEAD",
       accent: "ECHO BLUE",
       dir: "NOVA",
-      sheet: "NOVA_CHARACTER_SHEET_FINAL.png",
-      files: ["NOVA_FRONT_FINAL.png", "NOVA_RIGHT_3Q_FINAL.png", "NOVA_RIGHT_PROFILE_FINAL.png", "NOVA_UPPER_BODY_FINAL.png", "NOVA_FULL_BODY_FINAL.png"]
+      sheet: "NOVA_CHARACTER_SHEET_FINAL.webp",
+      files: ["NOVA_FRONT_FINAL.webp", "NOVA_RIGHT_3Q_FINAL.webp", "NOVA_RIGHT_PROFILE_FINAL.webp", "NOVA_UPPER_BODY_FINAL.webp", "NOVA_FULL_BODY_FINAL.webp"]
     },
     lyra: {
       index: "MEMBER 03",
@@ -183,8 +183,8 @@
       proportion: "7.5–8 HEAD",
       accent: "PALE GOLD",
       dir: "LYRA",
-      sheet: "LYRA_CHARACTER_SHEET_FINAL.png",
-      files: ["LYRA_FRONT_FINAL.png", "LYRA_RIGHT_3Q_FINAL.png", "LYRA_RIGHT_PROFILE_FINAL.png", "LYRA_UPPER_BODY_FINAL.png", "LYRA_FULL_BODY_FINAL.png"]
+      sheet: "LYRA_CHARACTER_SHEET_FINAL.webp",
+      files: ["LYRA_FRONT_FINAL.webp", "LYRA_RIGHT_3Q_FINAL.webp", "LYRA_RIGHT_PROFILE_FINAL.webp", "LYRA_UPPER_BODY_FINAL.webp", "LYRA_FULL_BODY_FINAL.webp"]
     },
     cyra: {
       index: "MEMBER 04",
@@ -195,8 +195,8 @@
       proportion: "7.5–8 HEAD",
       accent: "PRISM SILVER",
       dir: "CYRA",
-      sheet: "CYRA_CHARACTER_SHEET_FINAL.png",
-      files: ["CYRA_FRONT_FINAL.png", "CYRA_RIGHT_3Q_FINAL.png", "CYRA_RIGHT_PROFILE_FINAL.png", "CYRA_UPPER_BODY_FINAL.png", "CYRA_FULL_BODY_FINAL.png"]
+      sheet: "CYRA_CHARACTER_SHEET_FINAL.webp",
+      files: ["CYRA_FRONT_FINAL.webp", "CYRA_RIGHT_3Q_FINAL.webp", "CYRA_RIGHT_PROFILE_FINAL.webp", "CYRA_UPPER_BODY_FINAL.webp", "CYRA_FULL_BODY_FINAL.webp"]
     }
   };
 
@@ -219,7 +219,7 @@
     }
     modalGallery.innerHTML = member.files.map((file, i) => {
       const labels = ["FRONT / MASTER", "3/4 RIGHT", "PROFILE RIGHT", "UPPER BODY", "FULL BODY"];
-      return `<figure><img src="assets/echor/${member.dir}/${file}" alt="${member.name} ${labels[i]}"><figcaption>${labels[i]}</figcaption></figure>`;
+      return `<figure><img src="assets/echor/${member.dir}/${file}" alt="${member.name} ${labels[i]}" loading="lazy" decoding="async"><figcaption>${labels[i]}</figcaption></figure>`;
     }).join("");
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
@@ -291,6 +291,10 @@
       if (img.dataset.fallbackTried) return;
       img.dataset.fallbackTried = '1';
       const src = img.getAttribute('src') || '';
+      if (src.endsWith('.webp')) {
+        img.src = src.replace(/\.webp$/i, '.png');
+        return;
+      }
       if (src.endsWith('.png')) img.src = src.replace(/\.png$/i, '.jpeg');
     });
   });

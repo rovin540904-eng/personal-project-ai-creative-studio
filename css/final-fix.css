@@ -1,0 +1,29 @@
+/* =========================================================
+   MOTIONARY — FINAL FIX
+   Purpose:
+   1) Lock "Behind the final frame" to a 2×2 grid on desktop/tablet.
+   2) Prevent the AERON card from spanning the full row.
+   3) Preserve a single-column layout on mobile.
+   Loaded AFTER css/style.css so these rules override legacy 3-column rules.
+========================================================= */
+
+@media (min-width: 769px) {
+    .case-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px !important;
+    }
+
+    .case-project-card-aeron {
+        grid-column: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-project-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .case-project-card-aeron {
+        grid-column: auto !important;
+    }
+}
